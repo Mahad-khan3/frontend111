@@ -43,8 +43,9 @@ export function StickyProductBar() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{
-            enter: { type: "spring", stiffness: 300, damping: 30 },
-            exit: { duration: 0.35, ease: "easeIn" },
+            type: "spring",
+            stiffness: 300,
+            damping: 30,
           }}
           className="fixed bottom-0 left-1/2 z-[9999] w-[90%] -translate-x-1/2 md:w-[70%]"
           style={{ maxWidth: 900 }}

@@ -1,17 +1,18 @@
 "use client";
 
-import { useRef, useEffect, useState, type ElementType } from "react";
+import { useRef, useEffect, useState, type ElementType, type ReactNode } from "react";
 
 export function AnimatedHeading({
   as: Tag = "h2",
   className = "",
   children,
-  ...props
+  style,
 }: {
   as?: ElementType;
   className?: string;
-  children: React.ReactNode;
-} & React.JSX.IntrinsicElements[typeof Tag]) {
+  children: ReactNode;
+  style?: React.CSSProperties;
+}) {
   const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -35,7 +36,7 @@ export function AnimatedHeading({
     <Tag
       ref={ref}
       className={`heading-animate ${visible ? "is-visible" : ""} ${className}`}
-      {...props}
+      style={style}
     >
       {children}
     </Tag>
