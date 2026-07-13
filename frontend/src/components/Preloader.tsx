@@ -3,14 +3,13 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Logo } from "./Logo";
+import img1 from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
+import img2 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM.jpeg";
+import img3 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (1).jpeg";
+import img4 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (2).jpeg";
+import img5 from "@/images/WhatsApp Image 2026-07-13 at 12.07.31 PM.jpeg";
 
-const IMAGES = [
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=320&h=420&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=320&h=420&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=320&h=420&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=320&h=420&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=320&h=420&fit=crop&crop=face",
-];
+const IMAGES = [img1.src, img2.src, img3.src, img4.src, img5.src];
 
 const CYCLE_MS = 200;
 const SHOW_MS = 2000;

@@ -2,9 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import img1 from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
+import img2 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM.jpeg";
+import img3 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (1).jpeg";
+import img4 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (2).jpeg";
+import img5 from "@/images/WhatsApp Image 2026-07-13 at 12.07.31 PM.jpeg";
 
 type OrbitItem = {
-  seed: string;
+  src: string;
   angle: number;
   rotate: string;
 };
@@ -14,14 +19,14 @@ const ORBIT_WIDTH = 84;
 const ORBIT_HEIGHT = 104;
 
 const ORBIT_ITEMS: OrbitItem[] = [
-  { seed: "novadrive-01", angle: 0, rotate: "-rotate-3" },
-  { seed: "novadrive-02", angle: 45, rotate: "rotate-2" },
-  { seed: "novadrive-03", angle: 90, rotate: "-rotate-2" },
-  { seed: "novadrive-04", angle: 135, rotate: "rotate-3" },
-  { seed: "novadrive-05", angle: 180, rotate: "-rotate-1" },
-  { seed: "novadrive-06", angle: 225, rotate: "rotate-1" },
-  { seed: "novadrive-07", angle: 270, rotate: "-rotate-3" },
-  { seed: "novadrive-08", angle: 315, rotate: "rotate-2" },
+  { src: img1.src, angle: 0, rotate: "-rotate-3" },
+  { src: img2.src, angle: 45, rotate: "rotate-2" },
+  { src: img3.src, angle: 90, rotate: "-rotate-2" },
+  { src: img4.src, angle: 135, rotate: "rotate-3" },
+  { src: img5.src, angle: 180, rotate: "-rotate-1" },
+  { src: img1.src, angle: 225, rotate: "rotate-1" },
+  { src: img2.src, angle: 270, rotate: "-rotate-3" },
+  { src: img3.src, angle: 315, rotate: "rotate-2" },
 ];
 
 const TAGS = ["Photos", "Videos", "Documents", "Contacts"];
@@ -93,7 +98,7 @@ export function Hero() {
       >
         {ORBIT_ITEMS.map((item) => (
           <div
-            key={item.seed}
+            key={item.src}
             style={{
               position: "absolute",
               left: "50%",
@@ -109,7 +114,7 @@ export function Hero() {
                   height: 96,
                   borderRadius: "1.5rem",
                   overflow: "hidden",
-                  backgroundImage: `url(https://picsum.photos/seed/${item.seed}/240/320)`,
+                  backgroundImage: `url(${item.src})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   filter: "grayscale(15%)",
@@ -180,7 +185,7 @@ export function Hero() {
             >
               {ORBIT_ITEMS.map((item) => (
                 <div
-                  key={item.seed}
+                  key={item.src}
                   className="absolute left-1/2 top-1/2"
                   style={{
                     transform: `rotate(${item.angle}deg) translate(clamp(125px, 23vw, 205px)) rotate(-${item.angle}deg)`,
@@ -192,7 +197,7 @@ export function Hero() {
                       style={{
                         width: ORBIT_WIDTH,
                         height: ORBIT_HEIGHT,
-                        backgroundImage: `url(https://picsum.photos/seed/${item.seed}/240/320)`,
+                        backgroundImage: `url(${item.src})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         filter: "grayscale(15%)",

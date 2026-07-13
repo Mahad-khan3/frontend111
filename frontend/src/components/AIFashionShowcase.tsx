@@ -1,29 +1,35 @@
 "use client";
-import cardimg from '../src\images\WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg'
+import img1 from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
+import img2 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM.jpeg";
+import img3 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (1).jpeg";
+import img4 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (2).jpeg";
+import img5 from "@/images/WhatsApp Image 2026-07-13 at 12.07.31 PM.jpeg";
+
+const IMGS = [img1.src, img2.src, img3.src, img4.src, img5.src];
 
 const ROW1 = [
-  { seed: "look-01", alt: "Portrait 1" },
-  { seed: "look-02", alt: "Portrait 2" },
-  { seed: "look-03", alt: "Portrait 3" },
-  { seed: "look-04", alt: "Portrait 4" },
-  { seed: "look-05", alt: "Portrait 5" },
+  { src: IMGS[0], alt: "Portrait 1" },
+  { src: IMGS[1], alt: "Portrait 2" },
+  { src: IMGS[2], alt: "Portrait 3" },
+  { src: IMGS[3], alt: "Portrait 4" },
+  { src: IMGS[4], alt: "Portrait 5" },
 ];
 const ROW2 = [
-  { seed: "look-06", alt: "Portrait 6" },
-  { seed: "look-07", alt: "Portrait 7" },
-  { seed: "look-08", alt: "Portrait 8" },
-  { seed: "look-09", alt: "Portrait 9" },
+  { src: IMGS[0], alt: "Portrait 6" },
+  { src: IMGS[1], alt: "Portrait 7" },
+  { src: IMGS[2], alt: "Portrait 8" },
+  { src: IMGS[3], alt: "Portrait 9" },
 ];
 
 const MOBILE_ROW1 = [
-  { seed: "look-01", alt: "Portrait 1" },
-  { seed: "look-02", alt: "Portrait 2" },
-  { seed: "look-03", alt: "Portrait 3" },
+  { src: IMGS[0], alt: "Portrait 1" },
+  { src: IMGS[1], alt: "Portrait 2" },
+  { src: IMGS[2], alt: "Portrait 3" },
 ];
 const MOBILE_ROW2 = [
-  { seed: "look-04", alt: "Portrait 4" },
-  { seed: "look-05", alt: "Portrait 5" },
-  { seed: "look-06", alt: "Portrait 6" },
+  { src: IMGS[3], alt: "Portrait 4" },
+  { src: IMGS[4], alt: "Portrait 5" },
+  { src: IMGS[0], alt: "Portrait 6" },
 ];
 
 const DL_ICON = (
@@ -34,11 +40,11 @@ const TRASH_ICON = (
 );
 
 function Card({
-  seed,
+  src,
   alt,
   pos = "50% 12%",
 }: {
-  seed: string;
+  src: string;
   alt: string;
   pos?: string;
 }) {
@@ -46,7 +52,7 @@ function Card({
     <div className="group relative min-h-0 min-w-0 overflow-hidden rounded-xl" style={{ aspectRatio: "3/4" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={``}
+        src={src}
         alt={alt}
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         style={{ objectPosition: pos }}
@@ -114,7 +120,7 @@ export function AIFashionShowcase() {
                 />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="cardimg"
+                  src={img1.src}
                   alt="Preview"
                   className="relative block h-full w-full object-cover"
                   style={{ aspectRatio: "3/4" }}
@@ -162,10 +168,10 @@ export function AIFashionShowcase() {
             {/* Gallery — fills remaining height */}
             <div className="flex min-h-0 flex-1 flex-col justify-center gap-1.5 p-1.5 pt-0">
               <div className="grid min-h-0 grid-cols-5 gap-1.5">
-                {ROW1.map((i) => <Card key={i.seed} seed={i.seed} alt={i.alt} pos="50% 10%" />)}
+                {ROW1.map((i) => <Card key={i.alt} src={i.src} alt={i.alt} pos="50% 10%" />)}
               </div>
               <div className="grid min-h-0 grid-cols-5 gap-1.5">
-                {ROW2.map((i) => <Card key={i.seed} seed={i.seed} alt={i.alt} pos="50% 18%" />)}
+                {ROW2.map((i) => <Card key={i.alt} src={i.src} alt={i.alt} pos="50% 18%" />)}
                 <div />
               </div>
             </div>
@@ -192,14 +198,14 @@ export function AIFashionShowcase() {
             {/* Top row — 3 portraits, center slightly taller */}
             <div className="flex items-end gap-2">
               {MOBILE_ROW1.map((img, i) => (
-                <div key={img.seed} className="flex-1 min-w-0">
+                <div key={img.alt} className="flex-1 min-w-0">
                   <div
                     className="w-full rounded-xl overflow-hidden"
                     style={{ aspectRatio: i === 1 ? "3/4.5" : "3/4" }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={`https://picsum.photos/seed/${img.seed}/400/560`}
+                      src={img.src}
                       alt={img.alt}
                       className="h-full w-full object-cover"
                       draggable={false}
@@ -211,10 +217,10 @@ export function AIFashionShowcase() {
             {/* Bottom row — 3 squares */}
             <div className="grid grid-cols-3 gap-2">
               {MOBILE_ROW2.map((img) => (
-                <div key={img.seed} className="aspect-square rounded-xl overflow-hidden">
+                <div key={img.alt} className="aspect-square rounded-xl overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={`https://picsum.photos/seed/${img.seed}/400/400`}
+                    src={img.src}
                     alt={img.alt}
                     className="h-full w-full object-cover"
                     draggable={false}

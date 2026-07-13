@@ -3,6 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatedHeading } from "./AnimatedHeading";
+import img1 from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
+import img2 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM.jpeg";
+import img3 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (1).jpeg";
+import img4 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (2).jpeg";
+import img5 from "@/images/WhatsApp Image 2026-07-13 at 12.07.31 PM.jpeg";
+
+const IMGS = [img1.src, img2.src, img3.src, img4.src, img5.src];
 
 const GRID_ICON = (
   <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
@@ -143,10 +150,7 @@ export function PremiumShowcase() {
           <div className="premium-gallery flex min-h-0 gap-1.5 md:gap-2">
             {/* Left — portrait, flush with card left edge */}
             <CrossfadeCard
-              images={[
-                "https://picsum.photos/seed/prod-port-l1/400/560",
-                "https://picsum.photos/seed/prod-port-l2/400/560",
-              ]}
+              images={[IMGS[0], IMGS[1]]}
               delay={0}
               className="premium-portrait premium-edge-left h-full flex-shrink-0"
             />
@@ -155,28 +159,19 @@ export function PremiumShowcase() {
             <div className="flex flex-1 flex-col gap-1.5 md:gap-2">
               {/* Featured landscape */}
               <CrossfadeCard
-                images={[
-                  "https://picsum.photos/seed/prod-feat-c1/700/400",
-                  "https://picsum.photos/seed/prod-feat-c2/700/400",
-                ]}
+                images={[IMGS[2], IMGS[3]]}
                 delay={2500}
                 className="w-full flex-[1.1]"
               />
               {/* Two portrait bottom cards */}
               <div className="flex flex-1 gap-1.5 md:gap-2">
                 <CrossfadeCard
-                  images={[
-                    "https://picsum.photos/seed/prod-port-s1a/400/520",
-                    "https://picsum.photos/seed/prod-port-s1b/400/520",
-                  ]}
+                  images={[IMGS[4], IMGS[0]]}
                   delay={5000}
                   className="flex-1"
                 />
                 <CrossfadeCard
-                  images={[
-                    "https://picsum.photos/seed/prod-port-s2a/400/520",
-                    "https://picsum.photos/seed/prod-port-s2b/400/520",
-                  ]}
+                  images={[IMGS[1], IMGS[2]]}
                   delay={7500}
                   className="flex-1"
                 />
@@ -185,10 +180,7 @@ export function PremiumShowcase() {
 
             {/* Right — portrait, flush with card right edge */}
             <CrossfadeCard
-              images={[
-                "https://picsum.photos/seed/prod-port-r1/400/560",
-                "https://picsum.photos/seed/prod-port-r2/400/560",
-              ]}
+              images={[IMGS[3], IMGS[4]]}
               delay={10000}
               className="premium-portrait premium-edge-right h-full flex-shrink-0"
             />
@@ -259,21 +251,21 @@ export function PremiumShowcase() {
             {/* Left video — flush with card left edge */}
             <VideoCard
               src="https://www.w3schools.com/html/movie.mp4"
-              poster="https://picsum.photos/seed/vid-left/400/500"
+              poster={IMGS[0]}
               className="premium-video-left flex-1"
               style={{ height: "70%" }}
             />
             {/* Center video — tallest */}
             <VideoCard
               src="https://www.w3schools.com/html/mov_bbb.mp4"
-              poster="https://picsum.photos/seed/vid-center/500/700"
+              poster={IMGS[1]}
               className="flex-[1.3]"
               style={{ height: "100%" }}
             />
             {/* Right video — flush with card right edge */}
             <VideoCard
               src="https://www.w3schools.com/html/movie.mp4"
-              poster="https://picsum.photos/seed/vid-right/400/500"
+              poster={IMGS[2]}
               className="premium-video-right flex-1"
               style={{ height: "70%" }}
             />
