@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState, type ElementType, type ReactNode } from "react";
+import { useRef, useEffect, useState, type ReactNode } from "react";
 
 export function AnimatedHeading({
   as: Tag = "h2",
@@ -8,12 +8,12 @@ export function AnimatedHeading({
   children,
   style,
 }: {
-  as?: ElementType;
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   className?: string;
   children: ReactNode;
   style?: React.CSSProperties;
 }) {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLHeadingElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
