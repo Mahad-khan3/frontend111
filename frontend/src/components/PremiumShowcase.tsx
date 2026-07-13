@@ -198,27 +198,23 @@ export function PremiumShowcase() {
                         images={[IMGS[0], IMGS[1]]}
                         delay={0}
                         className="premium-portrait premium-edge-left h-full flex-shrink-0"
-                        style={{ aspectRatio: "3/4" }}
                       />
                       <div className="flex flex-1 flex-col gap-1.5 md:gap-2">
                         <CrossfadeCard
                           images={[IMGS[2], IMGS[3]]}
                           delay={2500}
                           className="w-full flex-[1.1]"
-                          style={{ aspectRatio: "16/9" }}
                         />
                         <div className="flex flex-1 gap-1.5 md:gap-2">
                           <CrossfadeCard
                             images={[IMGS[4], IMGS[0]]}
                             delay={5000}
                             className="flex-1"
-                            style={{ aspectRatio: "3/4" }}
                           />
                           <CrossfadeCard
                             images={[IMGS[1], IMGS[4]]}
                             delay={7500}
                             className="flex-1"
-                            style={{ aspectRatio: "3/4" }}
                           />
                         </div>
                       </div>
@@ -230,20 +226,17 @@ export function PremiumShowcase() {
                           images={[IMGS[3], IMGS[4]]}
                           delay={0}
                           className="w-full flex-[1.1]"
-                          style={{ aspectRatio: "16/9" }}
                         />
                         <CrossfadeCard
                           images={[IMGS[0], IMGS[2]]}
                           delay={2500}
                           className="w-full flex-[1.1]"
-                          style={{ aspectRatio: "16/9" }}
                         />
                       </div>
                       <CrossfadeCard
                         images={[IMGS[1], IMGS[3]]}
                         delay={5000}
                         className="premium-portrait premium-edge-right h-full flex-shrink-0"
-                        style={{ aspectRatio: "3/4" }}
                       />
                     </>
                   )}
