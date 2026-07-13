@@ -250,21 +250,21 @@ export function PremiumShowcase() {
           <div className="premium-video-area flex min-h-0 items-end gap-1.5 md:gap-2">
             {/* Left video — flush with card left edge */}
             <VideoCard
-              src="https://www.w3schools.com/html/movie.mp4"
+              src="https://cdn.pixabay.com/video/2021/06/11/77316-561991002_large.mp4"
               poster={IMGS[0]}
               className="premium-video-left flex-1"
               style={{ height: "70%" }}
             />
             {/* Center video — tallest */}
             <VideoCard
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              src="https://cdn.pixabay.com/video/2021/05/28/75550-556034413_large.mp4"
               poster={IMGS[1]}
               className="flex-[1.3]"
               style={{ height: "100%" }}
             />
             {/* Right video — flush with card right edge */}
             <VideoCard
-              src="https://www.w3schools.com/html/movie.mp4"
+              src="https://cdn.pixabay.com/video/2022/11/28/140828-776043783_large.mp4"
               poster={IMGS[2]}
               className="premium-video-right flex-1"
               style={{ height: "70%" }}

@@ -114,7 +114,7 @@ export function Hero() {
                   height: 96,
                   borderRadius: "1.5rem",
                   overflow: "hidden",
-                  backgroundImage: `url(${item.src})`,
+                  backgroundImage: `url("${item.src}")`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   filter: "grayscale(15%)",
@@ -197,7 +197,7 @@ export function Hero() {
                       style={{
                         width: ORBIT_WIDTH,
                         height: ORBIT_HEIGHT,
-                        backgroundImage: `url(${item.src})`,
+                        backgroundImage: `url("${item.src}")`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         filter: "grayscale(15%)",
