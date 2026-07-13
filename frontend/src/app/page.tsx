@@ -9,6 +9,7 @@ import { CTASection } from "@/components/CTASection";
 import { PremiumShowcase } from "@/components/PremiumShowcase";
 import { HowItWorks } from "@/components/HowItWorks";
 import { TrustedBy } from "@/components/TrustedBy";
+import { ParallaxStackedSections } from "@/components/ParallaxStackedSections";
 import { FeatureTiles } from "@/components/FeatureTiles";
 import { PinnedSpecs } from "@/components/PinnedSpecs";
 import { Testimonials } from "@/components/Testimonials";
@@ -37,6 +38,7 @@ export default function Home() {
       <PremiumShowcase />
       <HowItWorks />
       <TrustedBy />
+      <ParallaxStackedSections />
       <FeatureTiles />
       <PinnedSpecs />
       <Testimonials />
