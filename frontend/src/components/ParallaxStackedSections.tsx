@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback, type ReactNode } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
 const FONT = '"SF Pro Display", Arial, sans-serif';
 const HEADING_STYLE: React.CSSProperties = {
