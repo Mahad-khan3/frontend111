@@ -139,145 +139,243 @@ export function PremiumShowcase() {
   return (
     <section className="w-full bg-surface px-2 pb-2 transition-colors duration-400">
       <div className="flex w-full flex-col gap-[clamp(1rem,2vw,2rem)] md:flex-row">
-        {SECTIONS.map((section, i) => {
-          const isVideo = i === 2;
-          return (
-            <div
-              key={section.label}
-              className="premium-card bg-surface-alt flex flex-1 flex-col overflow-hidden transition-colors duration-400"
-            >
-              {/* Label row */}
-              <div className="premium-card-pad mb-3 flex items-center justify-between">
-                <div className="flex items-center gap-1.5">
-                  <span className="inline-block h-1 w-1 rounded-full bg-current opacity-70" />
-                  <span
-                    className="text-[11px] md:text-[clamp(10px,0.75vw,13px)]"
-                    style={{
-                      fontFamily: "var(--_font-family---font-family)",
-                      fontWeight: 500,
-                      color: "var(--color-text)",
-                      lineHeight: 1,
-                      letterSpacing: "0.02em",
-                    }}
-                  >
-                    {section.label}
-                  </span>
-                </div>
-                <div className="md:hidden">
-                  <FabButton />
-                </div>
-              </div>
+        {/* ═══ LEFT — AI Fashion Photoshoot (5 images) ═══ */}
+        <div className="premium-card bg-surface-alt flex flex-1 flex-col overflow-hidden transition-colors duration-400">
+          <div className="premium-card-pad mb-3 flex items-center justify-between">
+            <div className="flex items-center gap-1.5">
+              <span className="inline-block h-1 w-1 rounded-full bg-current opacity-70" />
+              <span
+                className="text-[11px] md:text-[clamp(10px,0.75vw,13px)]"
+                style={{
+                  fontFamily: "var(--_font-family---font-family)",
+                  fontWeight: 500,
+                  color: "var(--color-text)",
+                  lineHeight: 1,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                AI Fashion Photoshoot
+              </span>
+            </div>
+            <div className="md:hidden">
+              <FabButton />
+            </div>
+          </div>
 
-              {/* Gallery / Video area */}
-              {isVideo ? (
-                <div className="premium-video-area flex min-h-0 items-end gap-1.5 md:gap-2">
-                  <VideoCard
-                    src={VIDEOS[0].src}
-                    poster={VIDEOS[0].poster}
-                    className="premium-video-left flex-1"
-                    style={{ height: "70%" }}
-                  />
-                  <VideoCard
-                    src={VIDEOS[1].src}
-                    poster={VIDEOS[1].poster}
-                    className="flex-[1.3]"
-                    style={{ height: "100%" }}
-                  />
-                  <VideoCard
-                    src={VIDEOS[2].src}
-                    poster={VIDEOS[2].poster}
-                    className="premium-video-right flex-1"
-                    style={{ height: "70%" }}
-                  />
-                </div>
-              ) : (
-                <div className="premium-gallery flex min-h-0 gap-1.5 md:gap-2">
-                  {i === 0 ? (
-                    <>
-                      <CrossfadeCard
-                        images={[IMGS[0], IMGS[1]]}
-                        delay={0}
-                        className="premium-portrait premium-edge-left h-full flex-shrink-0"
-                      />
-                      <div className="flex flex-1 flex-col gap-1.5 md:gap-2">
-                        <CrossfadeCard
-                          images={[IMGS[2], IMGS[3]]}
-                          delay={2500}
-                          className="w-full flex-[1.1]"
-                        />
-                        <div className="flex flex-1 gap-1.5 md:gap-2">
-                          <CrossfadeCard
-                            images={[IMGS[4], IMGS[0]]}
-                            delay={5000}
-                            className="flex-1"
-                          />
-                          <CrossfadeCard
-                            images={[IMGS[1], IMGS[4]]}
-                            delay={7500}
-                            className="flex-1"
-                          />
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="flex flex-1 flex-col gap-1.5 md:gap-2">
-                        <CrossfadeCard
-                          images={[IMGS[3], IMGS[4]]}
-                          delay={0}
-                          className="w-full flex-[1.1]"
-                        />
-                        <CrossfadeCard
-                          images={[IMGS[0], IMGS[2]]}
-                          delay={2500}
-                          className="w-full flex-[1.1]"
-                        />
-                      </div>
-                      <CrossfadeCard
-                        images={[IMGS[1], IMGS[3]]}
-                        delay={5000}
-                        className="premium-portrait premium-edge-right h-full flex-shrink-0"
-                      />
-                    </>
-                  )}
-                </div>
-              )}
-
-              {/* Content */}
-              <div className="premium-card-pad premium-content-text mt-4 md:mt-5">
-                <AnimatedHeading
-                  as="h3"
-                  style={{
-                    fontFamily: "var(--_font-family---font-family)",
-                    fontWeight: 600,
-                    color: "var(--color-text)",
-                    lineHeight: 0.95,
-                    letterSpacing: "-0.025em",
-                  }}
-                >
-                  {section.heading[0]}
-                  <br />
-                  {section.heading[1]}
-                </AnimatedHeading>
-                <p
-                  style={{
-                    fontFamily: "var(--_font-family---font-family)",
-                    fontWeight: 500,
-                    color: "var(--color-text-secondary)",
-                    lineHeight: 1.6,
-                  }}
-                >
-                  {section.desc}
-                </p>
-              </div>
-
-              {/* FAB — desktop only at bottom */}
-              <div className="premium-card-pad mt-4 hidden md:flex md:justify-end">
-                <FabButton />
+          <div className="premium-gallery flex min-h-0 gap-1.5 md:gap-2">
+            <CrossfadeCard
+              images={[IMGS[0], IMGS[1]]}
+              delay={0}
+              className="premium-portrait premium-edge-left h-full flex-shrink-0"
+            />
+            <div className="flex flex-1 flex-col gap-1.5 md:gap-2">
+              <CrossfadeCard
+                images={[IMGS[2], IMGS[3]]}
+                delay={2500}
+                className="w-full flex-[1.1]"
+              />
+              <div className="flex flex-1 gap-1.5 md:gap-2">
+                <CrossfadeCard
+                  images={[IMGS[4], IMGS[0]]}
+                  delay={5000}
+                  className="flex-1"
+                />
+                <CrossfadeCard
+                  images={[IMGS[1], IMGS[4]]}
+                  delay={7500}
+                  className="flex-1"
+                />
               </div>
             </div>
-          );
-        })}
+            <CrossfadeCard
+              images={[IMGS[3], IMGS[2]]}
+              delay={10000}
+              className="premium-portrait premium-edge-right h-full flex-shrink-0"
+            />
+          </div>
+
+          <div className="premium-card-pad premium-content-text mt-4 md:mt-5">
+            <AnimatedHeading
+              as="h3"
+              style={{
+                fontFamily: "var(--_font-family---font-family)",
+                fontWeight: 600,
+                color: "var(--color-text)",
+                lineHeight: 0.95,
+                letterSpacing: "-0.025em",
+              }}
+            >
+              Studio-quality,
+              <br />
+              without the studio.
+            </AnimatedHeading>
+            <p
+              style={{
+                fontFamily: "var(--_font-family---font-family)",
+                fontWeight: 500,
+                color: "var(--color-text-secondary)",
+                lineHeight: 1.6,
+              }}
+            >
+              Upload one product and get all the angles, looks and moods you need for PDPs and campaigns—without booking a studio.
+            </p>
+          </div>
+
+          <div className="premium-card-pad mt-4 hidden md:flex md:justify-end">
+            <FabButton />
+          </div>
+        </div>
+
+        {/* ═══ CENTER — AI Product Shots ═══ */}
+        <div className="premium-card bg-surface-alt flex flex-1 flex-col overflow-hidden transition-colors duration-400">
+          <div className="premium-card-pad mb-3 flex items-center justify-between">
+            <div className="flex items-center gap-1.5">
+              <span className="inline-block h-1 w-1 rounded-full bg-current opacity-70" />
+              <span
+                className="text-[11px] md:text-[clamp(10px,0.75vw,13px)]"
+                style={{
+                  fontFamily: "var(--_font-family---font-family)",
+                  fontWeight: 500,
+                  color: "var(--color-text)",
+                  lineHeight: 1,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                AI Product Shots
+              </span>
+            </div>
+            <div className="md:hidden">
+              <FabButton />
+            </div>
+          </div>
+
+          <div className="premium-gallery flex min-h-0 gap-1.5 md:gap-2">
+            <div className="flex flex-1 flex-col gap-1.5 md:gap-2">
+              <CrossfadeCard
+                images={[IMGS[3], IMGS[4]]}
+                delay={0}
+                className="w-full flex-[1.1]"
+              />
+              <CrossfadeCard
+                images={[IMGS[0], IMGS[2]]}
+                delay={2500}
+                className="w-full flex-[1.1]"
+              />
+            </div>
+            <CrossfadeCard
+              images={[IMGS[1], IMGS[3]]}
+              delay={5000}
+              className="premium-portrait premium-edge-right h-full flex-shrink-0"
+            />
+          </div>
+
+          <div className="premium-card-pad premium-content-text mt-4 md:mt-5">
+            <AnimatedHeading
+              as="h3"
+              style={{
+                fontFamily: "var(--_font-family---font-family)",
+                fontWeight: 600,
+                color: "var(--color-text)",
+                lineHeight: 0.95,
+                letterSpacing: "-0.025em",
+              }}
+            >
+              Your product,
+              <br />
+              new scenes on demand.
+            </AnimatedHeading>
+            <p
+              style={{
+                fontFamily: "var(--_font-family---font-family)",
+                fontWeight: 500,
+                color: "var(--color-text-secondary)",
+                lineHeight: 1.6,
+              }}
+            >
+              Drop a product photo and we build clean packshots and styled lifestyle scenes around it.
+            </p>
+          </div>
+
+          <div className="premium-card-pad mt-4 hidden md:flex md:justify-end">
+            <FabButton />
+          </div>
+        </div>
+
+        {/* ═══ RIGHT — AI Video Production (3 videos) ═══ */}
+        <div className="premium-card bg-surface-alt flex flex-1 flex-col overflow-hidden transition-colors duration-400">
+          <div className="premium-card-pad mb-3 flex items-center justify-between">
+            <div className="flex items-center gap-1.5">
+              <span className="inline-block h-1 w-1 rounded-full bg-current opacity-70" />
+              <span
+                className="text-[11px] md:text-[clamp(10px,0.75vw,13px)]"
+                style={{
+                  fontFamily: "var(--_font-family---font-family)",
+                  fontWeight: 500,
+                  color: "var(--color-text)",
+                  lineHeight: 1,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                AI Video Production
+              </span>
+            </div>
+            <div className="md:hidden">
+              <FabButton />
+            </div>
+          </div>
+
+          <div className="premium-video-area flex min-h-0 items-end gap-1.5 md:gap-2">
+            <VideoCard
+              src={VIDEOS[0].src}
+              poster={VIDEOS[0].poster}
+              className="premium-video-left flex-1"
+              style={{ height: "70%" }}
+            />
+            <VideoCard
+              src={VIDEOS[1].src}
+              poster={VIDEOS[1].poster}
+              className="flex-[1.3]"
+              style={{ height: "100%" }}
+            />
+            <VideoCard
+              src={VIDEOS[2].src}
+              poster={VIDEOS[2].poster}
+              className="premium-video-right flex-1"
+              style={{ height: "70%" }}
+            />
+          </div>
+
+          <div className="premium-card-pad premium-content-text mt-4 md:mt-5">
+            <AnimatedHeading
+              as="h3"
+              style={{
+                fontFamily: "var(--_font-family---font-family)",
+                fontWeight: 600,
+                color: "var(--color-text)",
+                lineHeight: 0.95,
+                letterSpacing: "-0.025em",
+              }}
+            >
+              Campaign-ready
+              <br />
+              video in minutes.
+            </AnimatedHeading>
+            <p
+              style={{
+                fontFamily: "var(--_font-family---font-family)",
+                fontWeight: 500,
+                color: "var(--color-text-secondary)",
+                lineHeight: 1.6,
+              }}
+            >
+              Create on-brand clips for Reels, TikTok and ads without a shoot.
+            </p>
+          </div>
+
+          <div className="premium-card-pad mt-4 hidden md:flex md:justify-end">
+            <FabButton />
+          </div>
+        </div>
       </div>
 
       <style>{`
