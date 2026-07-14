@@ -11,7 +11,7 @@ export function Logo({ className = "" }: { className?: string }) {
         d="M12 28V12h3.2l9.6 11.4V12H28v16h-3.2L15.2 16.6V28H12Z"
         className="fill-bg"
       />
-      <circle cx="29" cy="12" r="2.4" fill="var(--color-lime)" />
+      <circle cx="29" cy="12" r="2.4" fill="#e8572a" />
     </svg>
   );
 }

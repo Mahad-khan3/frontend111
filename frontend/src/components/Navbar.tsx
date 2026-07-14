@@ -32,7 +32,7 @@ export function Navbar() {
           >
             <Logo className="w-8 h-8 md:w-9 md:h-9" />
             <span className="hidden sm:inline font-display font-bold tracking-tight text-text">
-              <span className="text-lime">Nova</span>Drive
+              <span style={{ color: "#e8572a" }}>Nova</span>Drive
             </span>
           </Link>
 

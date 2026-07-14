@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatedHeading } from "./AnimatedHeading";
 import img1 from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
@@ -29,69 +28,40 @@ const RIGHT_SECTION = {
   desc: "Create on-brand clips for Reels, TikTok and ads without a shoot.",
 };
 
-function SlideshowImage({
-  images,
-  interval = 3500,
-  delay = 0,
-  className = "",
-  style = {},
-}: {
-  images: string[];
-  interval?: number;
-  delay?: number;
-  className?: string;
-  style?: React.CSSProperties;
-}) {
-  const [idx, setIdx] = useState(0);
-
-  useEffect(() => {
-    if (images.length <= 1) return;
-    const id = setInterval(() => setIdx((i) => (i + 1) % images.length), interval);
-    const timeout = setTimeout(() => setIdx(1), delay);
-    return () => {
-      clearInterval(id);
-      clearTimeout(timeout);
-    };
-  }, [images.length, interval, delay]);
-
+function Eyebrow({ label }: { label: string }) {
   return (
-    <div className={`relative overflow-hidden ${className}`} style={style}>
-      {images.map((src, i) => (
-        <img
-          key={src}
-          src={src}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
-          style={{ opacity: i === idx ? 1 : 0 }}
-          draggable={false}
-        />
-      ))}
+    <div className="flex items-center gap-1.5">
+      <span
+        className="inline-block h-1.5 w-1.5 rounded-full"
+        style={{ backgroundColor: "var(--color-accent)" }}
+      />
+      <span
+        className="text-[11px] md:text-[clamp(10px,0.75vw,13px)]"
+        style={{
+          fontFamily: "var(--_font-family---font-family)",
+          fontWeight: 600,
+          color: "var(--color-accent)",
+          lineHeight: 1,
+          letterSpacing: "0.02em",
+        }}
+      >
+        {label}
+      </span>
     </div>
   );
 }
 
-function GoalButton({ className = "" }: { className?: string }) {
+function DotPillButton({ label }: { label: string }) {
   return (
     <Link
       href="#next"
-      className={`showcase-goal-btn flex items-center justify-center rounded-full transition-all duration-300 ease-out ${className}`}
-      style={{
-        width: "clamp(2.5rem, 3.2vw, 3.25rem)",
-        height: "clamp(2.5rem, 3.2vw, 3.25rem)",
-        backgroundColor: "var(--color-surface)",
-        boxShadow: "0 2px 10px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.06)",
-        color: "var(--color-text)",
-        flexShrink: 0,
-      }}
-      aria-label="Next"
+      aria-label={label}
+      className="dot-pill flex items-center justify-center gap-1 rounded-full"
     >
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-        <circle cx="10" cy="10" r="1.5" />
-        <circle cx="4" cy="4" r="1.5" />
-        <circle cx="16" cy="4" r="1.5" />
-        <circle cx="4" cy="16" r="1.5" />
-        <circle cx="16" cy="16" r="1.5" />
-      </svg>
+      <span className="dot-pill-dot" />
+      <span className="dot-pill-dot" />
+      <span className="dot-pill-dot" />
+      <span className="dot-pill-dot" />
     </Link>
   );
 }
@@ -122,26 +92,6 @@ function VideoCard({
   );
 }
 
-function Eyebrow({ label }: { label: string }) {
-  return (
-    <div className="flex items-center gap-1.5">
-      <span className="inline-block h-1 w-1 rounded-full" style={{ backgroundColor: "var(--color-accent)" }} />
-      <span
-        className="text-[11px] md:text-[clamp(10px,0.75vw,13px)]"
-        style={{
-          fontFamily: "var(--_font-family---font-family)",
-          fontWeight: 500,
-          color: "var(--color-accent)",
-          lineHeight: 1,
-          letterSpacing: "0.02em",
-        }}
-      >
-        {label}
-      </span>
-    </div>
-  );
-}
-
 function HeadingBlock({
   heading,
   desc,
@@ -150,8 +100,8 @@ function HeadingBlock({
   desc: string;
 }) {
   return (
-    <div className="flex items-start justify-between gap-3 md:flex-col md:items-start">
-      <div className="min-w-0 flex-1">
+    <div className="flex flex-col items-start gap-4">
+      <div className="min-w-0">
         <AnimatedHeading
           as="h3"
           style={{
@@ -179,9 +129,7 @@ function HeadingBlock({
           {desc}
         </p>
       </div>
-      <div className="mt-1 flex-shrink-0 md:mt-4">
-        <GoalButton />
-      </div>
+      <DotPillButton label={heading.join(" ")} />
     </div>
   );
 }
@@ -192,178 +140,202 @@ export function ShowcaseSection() {
       className="w-full px-2 pb-2 transition-colors duration-400"
       style={{ backgroundColor: "var(--color-bg)" }}
     >
-      <div className="flex w-full flex-col gap-[clamp(0.5rem,1vw,1rem)] md:flex-row md:gap-[clamp(0.5rem,1vw,1rem)]">
-        {/* ═══ LEFT — Product Shots ═══ */}
+      <div className="flex w-full flex-col gap-[clamp(1rem,1.5vw,1.5rem)] md:flex-row">
+        {/* ═══ LEFT — AI Product Shots ═══ */}
         <div
           className="flex flex-1 flex-col overflow-hidden"
           style={{
-            backgroundColor: "var(--color-surface-alt)",
-            borderRadius: "clamp(1rem, 2.5vw, 2.5rem)",
-            minHeight: "100svh",
+            backgroundColor: "var(--color-bg)",
+            borderRadius: "0.75rem",
+            minHeight: "clamp(32rem, 80svh, 56rem)",
           }}
         >
-          <div style={{ padding: "clamp(0.75rem, 1.5vw, 1.5rem)", paddingBottom: 0, flexShrink: 0 }}>
+          <div
+            style={{
+              padding: "clamp(0.9rem, 1.6vw, 1.6rem)",
+              paddingBottom: 0,
+              flexShrink: 0,
+            }}
+          >
             <Eyebrow label={LEFT_SECTION.label} />
           </div>
 
-          {/* Image grid — fills the first screen, heading/text scrolls in below */}
+          {/* Asymmetric collage: tall full-height L/R anchors + center (top big + 2 small) */}
           <div
-            className="grid w-full"
+            className="w-full"
             style={{
-              gridTemplateColumns: "minmax(56px, 24%) 1fr minmax(56px, 24%)",
-              gridTemplateRows: "1fr auto",
-              gap: "clamp(0.3rem, 0.6vw, 0.6rem)",
               flex: "1 1 auto",
-              marginTop: "clamp(0.6rem, 1.2vw, 1.2rem)",
+              minHeight: 0,
+              display: "grid",
+              gridTemplateColumns: "1fr 1.25fr 1fr",
+              gridTemplateRows: "1fr 1fr",
+              gap: "clamp(0.3rem, 0.6vw, 0.6rem)",
+              padding: "clamp(0.7rem, 1.4vw, 1.4rem)",
+              paddingBottom: "clamp(0.4rem, 0.8vw, 0.8rem)",
             }}
           >
-            {/* far left — flush to outer edge, radius only on inner (right) side */}
-            <div
-              className="self-center"
-              style={{ gridColumn: "1", gridRow: "1 / 3", height: "72%" }}
-            >
-              <SlideshowImage
-                images={[IMGS[0], IMGS[1]]}
-                delay={0}
-                className="h-full w-full"
-                style={{ borderRadius: "0 0.7rem 0.7rem 0" }}
-              />
-            </div>
+            {/* far left — full-height anchor */}
+            <img
+              src={IMGS[0]}
+              alt=""
+              draggable={false}
+              className="h-full w-full object-cover"
+              style={{ gridColumn: 1, gridRow: "1 / 3", borderRadius: "0.75rem" }}
+            />
 
-            {/* center top — slightly narrower, landscape */}
+            {/* center top — larger image */}
+            <img
+              src={IMGS[2]}
+              alt=""
+              draggable={false}
+              className="h-full w-full object-cover"
+              style={{ gridColumn: 2, gridRow: 1, borderRadius: "0.75rem" }}
+            />
+
+            {/* center bottom — two smaller images side by side */}
             <div
               style={{
-                gridColumn: "2",
-                gridRow: "1",
-                minHeight: 0,
+                gridColumn: 2,
+                gridRow: 2,
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                paddingLeft: "clamp(0.3rem, 0.6vw, 0.6rem)",
-                paddingRight: "clamp(0.3rem, 0.6vw, 0.6rem)",
-              }}
-            >
-              <SlideshowImage
-                images={[IMGS[2], IMGS[3]]}
-                delay={2500}
-                style={{
-                  borderRadius: "0.7rem",
-                  width: "100%",
-                  aspectRatio: "16 / 9",
-                  height: "auto",
-                }}
-              />
-            </div>
-
-            {/* center bottom — 2 images aligned to center image edges */}
-            <div
-              className="flex justify-center"
-              style={{
-                gridColumn: "2",
-                gridRow: "2",
                 gap: "clamp(0.3rem, 0.6vw, 0.6rem)",
-                height: "clamp(4.5rem, 11vh, 7rem)",
-                paddingLeft: "clamp(0.3rem, 0.6vw, 0.6rem)",
-                paddingRight: "clamp(0.3rem, 0.6vw, 0.6rem)",
+                minHeight: 0,
               }}
             >
-              <SlideshowImage
-                images={[IMGS[4], IMGS[0]]}
-                delay={5000}
-                className="h-full flex-1"
-                style={{ borderRadius: "0.6rem" }}
+              <img
+                src={IMGS[3]}
+                alt=""
+                draggable={false}
+                className="h-full w-full object-cover"
+                style={{ flex: 1, borderRadius: "0.75rem" }}
               />
-              <SlideshowImage
-                images={[IMGS[1], IMGS[4]]}
-                delay={7500}
-                className="h-full flex-1"
-                style={{ borderRadius: "0.6rem" }}
+              <img
+                src={IMGS[1]}
+                alt=""
+                draggable={false}
+                className="h-full w-full object-cover"
+                style={{ flex: 1, borderRadius: "0.75rem" }}
               />
             </div>
 
-            {/* far right — flush to outer edge, radius only on inner (left) side */}
-            <div
-              className="self-center"
-              style={{ gridColumn: "3", gridRow: "1 / 3", height: "72%" }}
-            >
-              <SlideshowImage
-                images={[IMGS[3], IMGS[2]]}
-                delay={10000}
-                className="h-full w-full"
-                style={{ borderRadius: "0.7rem 0 0 0.7rem" }}
-              />
-            </div>
+            {/* far right — full-height anchor */}
+            <img
+              src={IMGS[4]}
+              alt=""
+              draggable={false}
+              className="h-full w-full object-cover"
+              style={{ gridColumn: 3, gridRow: "1 / 3", borderRadius: "0.75rem" }}
+            />
           </div>
 
           <div
             style={{
-              padding: "clamp(0.75rem, 1.5vw, 1.5rem)",
-              paddingTop: "clamp(0.6rem, 1.2vw, 1.2rem)",
+              padding: "clamp(0.9rem, 1.6vw, 1.6rem)",
+              paddingTop: "clamp(0.5rem, 1vw, 1rem)",
             }}
           >
-            <HeadingBlock heading={LEFT_SECTION.heading} desc={LEFT_SECTION.desc} />
+            <HeadingBlock
+              heading={LEFT_SECTION.heading}
+              desc={LEFT_SECTION.desc}
+            />
           </div>
         </div>
 
-        {/* ═══ RIGHT — Video Production ═══ */}
+        {/* ═══ RIGHT — AI Video Production ═══ */}
         <div
           className="flex flex-1 flex-col overflow-hidden"
           style={{
-            backgroundColor: "var(--color-surface-alt)",
-            borderRadius: "clamp(1rem, 2.5vw, 2.5rem)",
-            minHeight: "100svh",
+            backgroundColor: "var(--color-bg)",
+            borderRadius: "0.75rem",
+            minHeight: "clamp(32rem, 80svh, 56rem)",
           }}
         >
-          <div style={{ padding: "clamp(0.75rem, 1.5vw, 1.5rem)", paddingBottom: 0, flexShrink: 0 }}>
+          <div
+            style={{
+              padding: "clamp(0.9rem, 1.6vw, 1.6rem)",
+              paddingBottom: 0,
+              flexShrink: 0,
+            }}
+          >
             <Eyebrow label={RIGHT_SECTION.label} />
           </div>
 
-          {/* 3 portrait videos — fills the first screen, flush to edges, center taller, bottom-aligned */}
+          {/* 3 videos — center taller, pokes out top & bottom */}
           <div
-            className="flex w-full items-end"
+            className="flex w-full items-center justify-center"
             style={{
-              gap: "clamp(0.3rem, 0.6vw, 0.6rem)",
               flex: "1 1 auto",
-              marginTop: "clamp(0.6rem, 1.2vw, 1.2rem)",
+              gap: "clamp(0.5rem, 1vw, 1rem)",
+              padding: "clamp(1.5rem, 3vw, 3rem)",
             }}
           >
             <VideoCard
               src={VIDEOS[0]}
               poster={IMGS[0]}
               className="flex-1"
-              style={{ height: "75%", borderRadius: "0 0.7rem 0.7rem 0" }}
+              style={{ aspectRatio: "3 / 4", borderRadius: "0.75rem 0 0 0.75rem" }}
             />
             <VideoCard
               src={VIDEOS[1]}
               poster={IMGS[1]}
-              style={{ flex: "1.05", height: "85%", borderRadius: 0 }}
+              style={{
+                flex: "1.1",
+                aspectRatio: "3 / 5",
+                borderRadius: "0.75rem",
+              }}
             />
             <VideoCard
               src={VIDEOS[2]}
               poster={IMGS[2]}
               className="flex-1"
-              style={{ height: "75%", borderRadius: "0.7rem 0 0 0.7rem" }}
+              style={{ aspectRatio: "3 / 4", borderRadius: "0 0.75rem 0.75rem 0" }}
             />
           </div>
 
           <div
             style={{
-              padding: "clamp(0.75rem, 1.5vw, 1.5rem)",
-              paddingTop: "clamp(0.6rem, 1.2vw, 1.2rem)",
+              padding: "clamp(0.9rem, 1.6vw, 1.6rem)",
+              paddingTop: "clamp(0.5rem, 1vw, 1rem)",
             }}
           >
-            <HeadingBlock heading={RIGHT_SECTION.heading} desc={RIGHT_SECTION.desc} />
+            <HeadingBlock
+              heading={RIGHT_SECTION.heading}
+              desc={RIGHT_SECTION.desc}
+            />
           </div>
         </div>
       </div>
 
       <style>{`
-        .showcase-goal-btn:hover {
-          background-color: #FF7A1A !important;
+        .dot-pill {
+          width: clamp(3rem, 3.4vw, 3.5rem);
+          height: clamp(3rem, 3.4vw, 3.5rem);
+          background: color-mix(in srgb, var(--color-text) 8%, transparent);
+          border: 1px solid color-mix(in srgb, var(--color-text) 16%, transparent);
+          transition: all 0.3s ease;
+          flex-shrink: 0;
+        }
+        .dot-pill:hover {
+          background: #FF7A1A !important;
+          border-color: #FF7A1A !important;
           box-shadow: 0 4px 24px rgba(255,122,26,0.35),
                       0 0 0 4px rgba(255,122,26,0.1) !important;
           transform: scale(1.05);
-          color: #FFFFFF !important;
+        }
+        .dot-pill:hover .dot-pill-dot { background: #ffffff !important; }
+        .dot-pill-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 9999px;
+          background: var(--color-text);
+          animation: dot-wave 1.4s infinite ease-in-out;
+        }
+        .dot-pill-dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot-pill-dot:nth-child(3) { animation-delay: 0.4s; }
+        .dot-pill-dot:nth-child(4) { animation-delay: 0.6s; }
+        @keyframes dot-wave {
+          0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+          30% { transform: translateY(-5px); opacity: 1; }
         }
       `}</style>
     </section>

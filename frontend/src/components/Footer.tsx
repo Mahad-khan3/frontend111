@@ -137,7 +137,7 @@ export function Footer() {
           >
             <Logo className="w-8 h-8" />
             <span style={{ fontWeight: 700, fontSize: "30px", lineHeight: 1 }}>
-              <span className="text-lime">Nova</span>
+              <span style={{ color: "#e8572a" }}>Nova</span>
               <span style={{ color: "var(--fb-text)" }}>Drive</span>
             </span>
           </Link>
