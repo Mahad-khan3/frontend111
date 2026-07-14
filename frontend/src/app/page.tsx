@@ -10,9 +10,6 @@ import { ShowcaseSection } from "@/components/ShowcaseSection";
 import { HowItWorks } from "@/components/HowItWorks";
 import { TrustedBy } from "@/components/TrustedBy";
 import { ParallaxStackedSections } from "@/components/ParallaxStackedSections";
-import { FeatureTiles } from "@/components/FeatureTiles";
-import { PinnedSpecs } from "@/components/PinnedSpecs";
-import { Testimonials } from "@/components/Testimonials";
 import { FAQSection } from "@/components/FAQSection";
 import { StickyProductBar } from "@/components/StickyProductBar";
 
@@ -39,9 +36,6 @@ export default function Home() {
       <HowItWorks />
       <TrustedBy />
       <ParallaxStackedSections />
-      <FeatureTiles />
-      <PinnedSpecs />
-      <Testimonials />
       <FAQSection />
     </>
   );
