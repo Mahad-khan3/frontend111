@@ -59,7 +59,7 @@ export function Hero() {
 <div className="flex flex-col items-center lg:hidden">
   {/* Heading */}
   <div ref={titleRef} className="relative z-10 w-full max-w-[640px] px-5 text-center md:px-9">
-    <h1 className="font-display text-[1rem] leading-[0.95] tracking-tight text-text sm:text-5xl md:text-8xl">
+    <h1 className="font-display text-[1rem] leading-[0.95] tracking-tight text-text sm:text-5xl md:text-8xl mt-[60px]">
       Your Catalog,
       <br />
       <span className="text-text-secondary whitespace-nowrap">instantly re-shots</span>
@@ -235,7 +235,7 @@ export function Hero() {
           <div
             ref={titleRef}
             className="relative z-10 w-full max-w-[640px] px-4 xl:px-8 text-left"
-            style={{ marginTop: "-40px" }}
+            style={{ marginTop: "70px" }}
           >
             <h1 className="font-display text-3xl font-small leading-[0.95] tracking-tight text-text sm:text-4xl md:text-5xl">
               Your Catalog,

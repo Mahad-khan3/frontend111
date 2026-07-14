@@ -105,6 +105,7 @@ The following features were added / modified on top of the base project:
 ### 7. Hero heading — smaller + flush-left (`components/Hero.tsx`)
 - "Your Catalog, instantly re-shots" heading reduced in size (desktop `md:text-7xl → md:text-5xl`, etc.).
 - Aligned flush to the left edge: left padding reduced (`px-8 xl:px-12` → `px-4 xl:px-8`) while keeping `text-left`, so it no longer reads as centered.
+- Top spacing of `80px` added to the heading on **both** the mobile/tablet block (`mt-[80px]`) and the desktop block (`marginTop: 80px`), so it sits lower with a clear gap above it. (The mobile/tablet block is `lg:hidden`, so on desktop the separate desktop heading block carries the spacing.)
 
 ## Notes
 - Placeholder images live in `src/images/` and placeholder videos use public Pixabay URLs — swap these for real assets later.
