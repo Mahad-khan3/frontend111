@@ -256,7 +256,7 @@ export function Footer() {
           style={{ fontFamily: '"SF Pro Display", Arial, sans-serif' }}
         >
           <p style={{ margin: 0, fontSize: "13px", color: "var(--fb-dim)" }}>
-            &copy; 2026, Fourmula ltd. UK, London. All rights reserved.
+            &copy; 2026, NOVA DRIVE. All rights reserved.
           </p>
           <p style={{ margin: 0, fontSize: "13px", color: "var(--fb-rust)" }}>
             Registered in England &amp; Wales No.: 13044361

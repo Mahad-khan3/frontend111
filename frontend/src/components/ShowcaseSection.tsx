@@ -36,13 +36,13 @@ function Eyebrow({ label }: { label: string }) {
         style={{ backgroundColor: "var(--color-accent)" }}
       />
       <span
-        className="text-[11px] md:text-[clamp(10px,0.75vw,13px)]"
+        className="text-[11px] md:text-[clamp(10px,0.75vw,13px)] text-black transition-colors duration-400 dark:text-white"
         style={{
           fontFamily: "var(--_font-family---font-family)",
           fontWeight: 600,
-          color: "var(--color-accent)",
           lineHeight: 1,
-          letterSpacing: "0.02em",
+          letterSpacing: "0.04em",
+          textTransform: "uppercase",
         }}
       >
         {label}
@@ -136,18 +136,18 @@ function HeadingBlock({
 
 export function ShowcaseSection() {
   return (
-    <section
-      className="w-full px-2 pb-2 transition-colors duration-400"
-      style={{ backgroundColor: "var(--color-bg)" }}
-    >
+      <section
+        className="w-full px-2 pb-2 pt-[clamp(2rem,4vw,3.5rem)] transition-colors duration-400"
+        style={{ backgroundColor: "var(--color-bg)" }}
+      >
       <div className="flex w-full flex-col gap-[clamp(1rem,1.5vw,1.5rem)] md:flex-row">
         {/* ═══ LEFT — AI Product Shots ═══ */}
         <div
-          className="flex flex-1 flex-col overflow-hidden"
+          className="flex flex-1 flex-col overflow-hidden min-w-0 min-h-[60svh] md:min-h-[clamp(32rem,80svh,56rem)]"
           style={{
             backgroundColor: "var(--color-bg)",
-            borderRadius: "0.75rem",
-            minHeight: "clamp(32rem, 80svh, 56rem)",
+            borderRadius: "1rem",
+            border: "1px solid var(--color-border)",
           }}
         >
           <div
@@ -170,7 +170,7 @@ export function ShowcaseSection() {
               gridTemplateColumns: "1fr 1.25fr 1fr",
               gridTemplateRows: "1fr 1fr",
               gap: "clamp(0.3rem, 0.6vw, 0.6rem)",
-              padding: "clamp(0.7rem, 1.4vw, 1.4rem)",
+              padding: "clamp(0.7rem, 1.4vw, 1.4rem) 0",
               paddingBottom: "clamp(0.4rem, 0.8vw, 0.8rem)",
             }}
           >
@@ -180,7 +180,7 @@ export function ShowcaseSection() {
               alt=""
               draggable={false}
               className="h-full w-full object-cover"
-              style={{ gridColumn: 1, gridRow: "1 / 3", borderRadius: "0.75rem" }}
+              style={{ gridColumn: 1, gridRow: "1 / 3", borderRadius: "0 0.75rem 0.75rem 0" }}
             />
 
             {/* center top — larger image */}
@@ -224,7 +224,7 @@ export function ShowcaseSection() {
               alt=""
               draggable={false}
               className="h-full w-full object-cover"
-              style={{ gridColumn: 3, gridRow: "1 / 3", borderRadius: "0.75rem" }}
+              style={{ gridColumn: 3, gridRow: "1 / 3", borderRadius: "0.75rem 0 0 0.75rem" }}
             />
           </div>
 
@@ -243,11 +243,11 @@ export function ShowcaseSection() {
 
         {/* ═══ RIGHT — AI Video Production ═══ */}
         <div
-          className="flex flex-1 flex-col overflow-hidden"
+          className="flex flex-1 flex-col overflow-hidden min-w-0 min-h-[60svh] md:min-h-[clamp(32rem,80svh,56rem)]"
           style={{
             backgroundColor: "var(--color-bg)",
-            borderRadius: "0.75rem",
-            minHeight: "clamp(32rem, 80svh, 56rem)",
+            borderRadius: "1rem",
+            border: "1px solid var(--color-border)",
           }}
         >
           <div
@@ -266,14 +266,14 @@ export function ShowcaseSection() {
             style={{
               flex: "1 1 auto",
               gap: "clamp(0.5rem, 1vw, 1rem)",
-              padding: "clamp(1.5rem, 3vw, 3rem)",
+              padding: "clamp(1.5rem, 3vw, 3rem) 0",
             }}
           >
             <VideoCard
               src={VIDEOS[0]}
               poster={IMGS[0]}
               className="flex-1"
-              style={{ aspectRatio: "3 / 4", borderRadius: "0.75rem 0 0 0.75rem" }}
+              style={{ aspectRatio: "3 / 4", borderRadius: "0 0.75rem 0.75rem 0" }}
             />
             <VideoCard
               src={VIDEOS[1]}
@@ -288,7 +288,7 @@ export function ShowcaseSection() {
               src={VIDEOS[2]}
               poster={IMGS[2]}
               className="flex-1"
-              style={{ aspectRatio: "3 / 4", borderRadius: "0 0.75rem 0.75rem 0" }}
+              style={{ aspectRatio: "3 / 4", borderRadius: "0.75rem 0 0 0.75rem" }}
             />
           </div>
 
