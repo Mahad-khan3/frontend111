@@ -58,8 +58,8 @@ export function Hero() {
       {/* ── Mobile / Tablet layout ── */}
 <div className="flex flex-col items-center lg:hidden">
   {/* Heading */}
-  <div ref={titleRef} className="relative z-10 w-full max-w-[640px] px-5 text-center md:px-8">
-    <h1 className="font-display text-[1rem] leading-[0.95] tracking-tight text-text sm:text-6xl md:text-7xl">
+  <div ref={titleRef} className="relative z-10 w-full max-w-[640px] px-5 text-center md:px-9">
+    <h1 className="font-display text-[1rem] leading-[0.95] tracking-tight text-text sm:text-5xl md:text-8xl">
       Your Catalog,
       <br />
       <span className="text-text-secondary whitespace-nowrap">instantly re-shots</span>
@@ -234,10 +234,10 @@ export function Hero() {
           {/* Headline */}
           <div
             ref={titleRef}
-            className="relative z-10 w-full max-w-[640px] px-8 xl:px-12 text-left"
+            className="relative z-10 w-full max-w-[640px] px-4 xl:px-8 text-left"
             style={{ marginTop: "-40px" }}
           >
-            <h1 className="font-display text-5xl font-small leading-[0.95] tracking-tight text-text sm:text-6xl md:text-7xl">
+            <h1 className="font-display text-3xl font-small leading-[0.95] tracking-tight text-text sm:text-4xl md:text-5xl">
               Your Catalog,
               <br />
               <span className="text-text-secondary">instantly re-shots</span>

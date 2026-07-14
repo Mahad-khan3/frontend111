@@ -4,9 +4,9 @@ import { LetterReveal } from "./LetterReveal";
 
 export function BrandVisuals() {
   return (
-    <section className="w-full bg-surface transition-colors duration-400">
+    <section className="w-full bg-surface transition-colors duration-400 dark:bg-black">
       <div
-        className="flex w-full flex-col md:flex-row"
+        className="flex w-full flex-col py-[1.5rem] md:flex-row"
         style={{ borderTop: "1px solid var(--lines)" }}
       >
         {/* Left column — small label top-left, ~25% width */}
@@ -31,9 +31,9 @@ export function BrandVisuals() {
             className="whitespace-nowrap"
             style={{
               fontFamily: "var(--_font-family---font-family)",
-              fontSize: "var(--_fonts---h2)",
+              fontSize: "clamp(3rem, 6.5vw, 6.5rem)",
               lineHeight: 1,
-              fontWeight: "var(--_font-family---regular)",
+              fontWeight: 300,
               letterSpacing: "-0.225rem",
               color: "var(--color-text)",
             }}

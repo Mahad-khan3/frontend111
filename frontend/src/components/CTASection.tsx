@@ -20,7 +20,7 @@ const GRID_ICON = (
 export function CTASection() {
   return (
     <section
-      className="w-full hidden md:block bg-surface transition-colors duration-400"
+      className="w-full hidden md:block bg-surface transition-colors duration-400 dark:bg-black"
       style={{
         paddingTop: "clamp(4rem, 8vw, 8rem)",
         paddingBottom: "clamp(4rem, 8vw, 8rem)",
