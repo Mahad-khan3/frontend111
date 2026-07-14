@@ -172,23 +172,30 @@ export function ParallaxStackedSections() {
   }, []);
 
   useEffect(() => {
-    const TILT_MAX = 3.5;
+    const SCALE_MIN = 0.78;
+    const TILT_MAX = 4;
+    const OPACITY_MIN = 0.4;
     let ticking = false;
 
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           for (let i = 0; i < SECTIONS.length - 1; i++) {
+            const outer = outerRefs.current[i];
             const nextSection = outerRefs.current[i + 1];
-            const inner = innerRefs.current[i];
-            if (!nextSection || !inner) continue;
+            if (!outer || !nextSection) continue;
 
             const nextRect = nextSection.getBoundingClientRect();
             const vh = window.innerHeight;
             const progress = Math.max(0, Math.min(1, 1 - nextRect.top / vh));
-            const angle = progress * TILT_MAX;
-            const direction = i % 2 === 0 ? -1 : 1;
-            inner.style.transform = `rotate(${angle * direction}deg)`;
+
+            const scale = 1 - (1 - SCALE_MIN) * progress;
+            const rotateX = TILT_MAX * progress;
+            const opacity = 1 - (1 - OPACITY_MIN) * progress;
+
+            // whole-section transform: tilt back (fold) + shrink + fade
+            outer.style.transform = `perspective(1200px) rotateX(${rotateX}deg) scale(${scale})`;
+            outer.style.opacity = String(opacity);
           }
           ticking = false;
         });
@@ -197,8 +204,15 @@ export function ParallaxStackedSections() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    // touch / mobile scroll also fires native scroll events, so behavior is identical
+    window.addEventListener("touchmove", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("touchmove", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   return (
@@ -221,6 +235,8 @@ export function ParallaxStackedSections() {
                 height: "100vh",
                 minHeight: "100vh",
                 background: data.gradient,
+                transformOrigin: "top center",
+                willChange: "transform, opacity",
               }}
             >
               <div
