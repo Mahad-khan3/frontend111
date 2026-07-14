@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { LetterReveal } from "./LetterReveal";
 
 const faqs = [
   {
@@ -72,7 +73,8 @@ export function FAQSection() {
             paddingLeft: "clamp(1.5rem, 4vw, 4rem)",
           }}
         >
-          <h2
+          <LetterReveal
+            as="h2"
             className="faq-heading"
             style={{
               fontFamily: '"SF Pro Display", Arial, sans-serif',
@@ -86,11 +88,8 @@ export function FAQSection() {
               letterSpacing: "-0.02em",
               transition: "color 0.4s ease",
             }}
-          >
-            Not AI-gen answers.
-            <br />
-            Real ones here.
-          </h2>
+            lines={["Not AI-gen answers.", "Real ones here."]}
+          />
 
           <div className="faq-list">
             {faqs.map((faq, i) => {

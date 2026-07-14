@@ -1,4 +1,5 @@
 "use client";
+import { LetterReveal } from "./LetterReveal";
 import img1 from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
 import img2 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM.jpeg";
 import img3 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (1).jpeg";
@@ -232,11 +233,11 @@ export function AIFashionShowcase() {
 
           {/* ── Content inside card ── */}
           <div className="mt-6">
-            <h3 className="text-xl font-bold leading-tight text-text">
-              Studio-quality,
-              <br />
-              without the studio.
-            </h3>
+            <LetterReveal
+              as="h3"
+              className="text-xl font-bold leading-tight text-text"
+              lines={["Studio-quality,", "without the studio."]}
+            />
             <p className="mt-3 text-sm leading-relaxed text-text-secondary">
               Generate photorealistic fashion imagery with AI — no camera, no crew, no studio needed. Just your vision, brought to life.
             </p>

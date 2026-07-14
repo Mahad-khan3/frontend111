@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { AnimatedHeading } from "./AnimatedHeading";
+import { LetterReveal } from "./LetterReveal";
 
 const GRID_ICON = (
   <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
@@ -34,7 +34,7 @@ export function CTASection() {
       >
         {/* Left — heading + description */}
         <div style={{ maxWidth: "560px" }}>
-          <AnimatedHeading
+          <LetterReveal
             as="h2"
             style={{
               fontFamily: "var(--_font-family---font-family)",
@@ -45,11 +45,8 @@ export function CTASection() {
               letterSpacing: "-0.025em",
               marginBottom: "clamp(1rem, 1.5vw, 1.5rem)",
             }}
-          >
-            Studio-quality,
-            <br />
-            without the studio.
-          </AnimatedHeading>
+            lines={["Studio-quality,", "without the studio."]}
+          />
           <p
             style={{
               fontFamily: "var(--_font-family---font-family)",

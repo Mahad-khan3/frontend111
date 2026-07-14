@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatedHeading } from "./AnimatedHeading";
+import { LetterReveal } from "./LetterReveal";
 
 const ITEMS = [
   "Makes Videos",
@@ -19,25 +19,24 @@ export function HowItWorks() {
     <section className="relative w-full overflow-hidden bg-surface transition-colors duration-400 md:h-screen md:flex md:flex-col">
       {/* ── Top: Title + Divider ── */}
       <div className="flex flex-col items-center pt-14 max-md:items-start max-md:px-6 max-md:pt-10">
-        <AnimatedHeading
+        <LetterReveal
           as="h2"
           className="font-display font-medium tracking-tight text-text"
           style={{ fontSize: "clamp(1rem, 2vw, 2.1rem)" }}
-        >
-          How It Works
-        </AnimatedHeading>
+          lines={["How It Works"]}
+        />
         <div className="mt-5 h-px w-full bg-border" />
       </div>
 
       {/* ═══ MOBILE: "AI that" + auto-scroll (3 visible, rest scrolls inside) ═══ */}
       <div className="md:hidden">
         <div className="px-6 pt-10">
-          <h3
+          <LetterReveal
+            as="h3"
             className="whitespace-nowrap font-display font-medium leading-[0.88] tracking-tight text-text"
             style={{ fontSize: "clamp(3rem, 9vw, 5.5rem)" }}
-          >
-            AI that
-          </h3>
+            lines={["AI that"]}
+          />
         </div>
 
         {/* Auto-scroll — fixed height for exactly 3 rows, overflow hidden */}
@@ -96,12 +95,12 @@ export function HowItWorks() {
         {/* Left Column */}
         <div className="relative flex w-[32%] flex-col justify-between border-r border-border px-10 py-12 lg:px-16 transition-colors duration-400">
           <div>
-            <h3
+            <LetterReveal
+              as="h3"
               className="whitespace-nowrap font-display font-medium leading-[0.88] tracking-tight text-text"
               style={{ fontSize: "clamp(3rem, 9vw, 5.5rem)" }}
-            >
-              AI that
-            </h3>
+              lines={["AI that"]}
+            />
           </div>
 
           <a

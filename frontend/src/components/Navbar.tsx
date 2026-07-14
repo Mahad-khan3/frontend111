@@ -22,11 +22,7 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-bg/70 backdrop-blur-xl border-b border-border"
-            : "bg-transparent border-b border-transparent"
-        }`}
+        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent border-b border-transparent`}
       >
         <div className="w-full px-5 md:px-8 xl:px-12 h-16 md:h-[72px] flex items-center justify-between gap-4">
           {/* Left: Logo */}

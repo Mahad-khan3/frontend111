@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatedHeading } from "./AnimatedHeading";
+import { LetterReveal } from "./LetterReveal";
 import img1 from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
 import img2 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM.jpeg";
 import img3 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (1).jpeg";
@@ -195,7 +196,7 @@ export function PremiumShowcase() {
           </div>
 
           <div className="premium-card-pad premium-content-text mt-4 md:mt-5">
-            <AnimatedHeading
+            <LetterReveal
               as="h3"
               style={{
                 fontFamily: "var(--_font-family---font-family)",
@@ -204,11 +205,8 @@ export function PremiumShowcase() {
                 lineHeight: 0.95,
                 letterSpacing: "-0.025em",
               }}
-            >
-              Studio-quality,
-              <br />
-              without the studio.
-            </AnimatedHeading>
+              lines={["Studio-quality,", "without the studio."]}
+            />
             <p
               style={{
                 fontFamily: "var(--_font-family---font-family)",

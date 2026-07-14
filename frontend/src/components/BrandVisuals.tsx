@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatedHeading } from "./AnimatedHeading";
+import { LetterReveal } from "./LetterReveal";
 
 export function BrandVisuals() {
   return (
@@ -26,7 +26,7 @@ export function BrandVisuals() {
 
         {/* Right column — large headline, top-aligned, ~75% width */}
         <div className="what-section-right flex flex-1 flex-col justify-start">
-          <AnimatedHeading
+          <LetterReveal
             as="h2"
             className="whitespace-nowrap"
             style={{
@@ -37,11 +37,8 @@ export function BrandVisuals() {
               letterSpacing: "-0.225rem",
               color: "var(--color-text)",
             }}
-          >
-            On-brand visuals.
-            <br />
-            Made by AI.
-          </AnimatedHeading>
+            lines={["On-brand visuals.", "Made by AI."]}
+          />
         </div>
       </div>
     </section>

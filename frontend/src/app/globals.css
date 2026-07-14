@@ -188,3 +188,19 @@ body {
 .cta-btn-label {
   position: relative;
 }
+
+/* ── Letter-by-letter orange reveal (first load only) ── */
+@keyframes lr-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(0.35em);
+    color: #e8572a;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

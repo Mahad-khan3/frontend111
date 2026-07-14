@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback } from "react";
+import { LetterReveal } from "./LetterReveal";
 
 const FONT = '"SF Pro Display", Arial, sans-serif';
 const HEADING_STYLE: React.CSSProperties = {
@@ -126,36 +127,38 @@ function GetStartedButton() {
 
 function IntroHeader() {
   return (
-    <section
-      className="relative z-0 flex w-full flex-col items-start justify-center bg-white px-6 py-16 md:px-12 md:py-20 lg:px-16 xl:px-20"
-      style={{ height: "100vh", minHeight: "100vh" }}
-    >
-      <div className="mb-6 w-full border-t border-black/10 md:mb-8" />
-      <div className="flex w-full flex-col gap-6 md:flex-row md:items-start md:justify-between md:gap-12">
-        <div className="max-w-2xl">
-          <h1
-            className="font-display tracking-tight text-[rgb(2,1,8)]"
-            style={{
-              fontFamily: FONT,
-              fontWeight: 400,
-              fontSize: 69,
-              lineHeight: "65px",
-              fontStyle: "normal",
-            }}
+      <section
+        className="relative z-0 flex w-full flex-col items-start justify-center bg-white px-6 py-16 dark:bg-[#0a0a0a] md:px-12 md:py-20 lg:px-16 xl:px-20"
+        style={{ height: "100vh", minHeight: "100vh" }}
+      >
+        <div className="mb-6 w-full border-t border-black/10 dark:border-white/15 md:mb-8" />
+        <div className="flex w-full flex-col gap-6 md:flex-row md:items-start md:justify-between md:gap-12">
+          <div className="max-w-2xl">
+            <LetterReveal
+              as="h1"
+              className="font-display tracking-tight text-[rgb(2,1,8)] dark:text-white"
+              style={{
+                fontFamily: FONT,
+                fontWeight: 400,
+                fontSize: 69,
+                lineHeight: "65px",
+                fontStyle: "normal",
+                margin: 0,
+              }}
+              lines={[
+                "From idea to assets",
+                { text: "in four steps.", className: "text-black/40 dark:text-white/40" },
+              ]}
+            />
+          </div>
+          <p
+            className="max-w-xs text-right text-sm leading-relaxed text-black/50 dark:text-white/50 md:text-base"
+            style={{ fontFamily: FONT }}
           >
-            From idea to assets
-            <br />
-            <span className="text-black/40">in four steps.</span>
-          </h1>
+            Sign up for free and supercharge your creative workflow.
+          </p>
         </div>
-        <p
-          className="max-w-xs text-right text-sm leading-relaxed text-black/50 md:text-base"
-          style={{ fontFamily: FONT }}
-        >
-          Sign up for free and supercharge your creative workflow.
-        </p>
-      </div>
-    </section>
+      </section>
   );
 }
 
