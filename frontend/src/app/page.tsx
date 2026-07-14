@@ -6,7 +6,7 @@ import { Hero } from "@/components/Hero";
 import { BrandVisuals } from "@/components/BrandVisuals";
 import { AIFashionShowcase } from "@/components/AIFashionShowcase";
 import { CTASection } from "@/components/CTASection";
-import { PremiumShowcase } from "@/components/PremiumShowcase";
+import { ShowcaseSection } from "@/components/ShowcaseSection";
 import { HowItWorks } from "@/components/HowItWorks";
 import { TrustedBy } from "@/components/TrustedBy";
 import { ParallaxStackedSections } from "@/components/ParallaxStackedSections";
@@ -35,7 +35,7 @@ export default function Home() {
       <BrandVisuals />
       <AIFashionShowcase />
       <CTASection />
-      <PremiumShowcase />
+      <ShowcaseSection />
       <HowItWorks />
       <TrustedBy />
       <ParallaxStackedSections />
