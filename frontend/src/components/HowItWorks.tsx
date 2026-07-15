@@ -3,11 +3,11 @@
 import { LetterReveal } from "./LetterReveal";
 
 const ITEMS = [
-  "Makes Videos",
-  "Stays On Brand",
-  "Create Images",
-  "Generate Ads",
-  "Edit Content",
+  "Backs Up Photos",
+  "Frees Up Space",
+  "Transfers Files",
+  "Works With iPhone",
+  "Works With PC/Mac",
 ];
 
 const ROW_HEIGHT = 130;
@@ -33,9 +33,9 @@ export function HowItWorks() {
         <div className="px-6 pt-10">
           <LetterReveal
             as="h3"
-            className="whitespace-nowrap font-display font-medium leading-[0.88] tracking-tight text-text"
-            style={{ fontSize: "clamp(3rem, 9vw, 5.5rem)" }}
-            lines={["AI that"]}
+            className="whitespace-nowrap text-left font-display font-normal leading-[0.95] tracking-tight text-text"
+            style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)" }}
+            lines={["Simple that"]}
           />
         </div>
 
@@ -97,9 +97,9 @@ export function HowItWorks() {
           <div>
             <LetterReveal
               as="h3"
-              className="whitespace-nowrap font-display font-medium leading-[0.88] tracking-tight text-text"
-              style={{ fontSize: "clamp(3rem, 9vw, 5.5rem)" }}
-              lines={["AI that"]}
+              className="whitespace-nowrap text-left font-display font-normal leading-[0.95] tracking-tight text-text"
+              style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)" }}
+              lines={["Simple that"]}
             />
           </div>
 

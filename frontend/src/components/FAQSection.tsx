@@ -5,28 +5,28 @@ import { LetterReveal } from "./LetterReveal";
 
 const faqs = [
   {
-    q: "What can AI FOURMULA create for my brand?",
-    a: "Product packshots, styled lifestyle scenes, campaign-ready video clips and social-ready visuals — all generated from a single product photo.",
+    q: "Does this work with both iPhone and Android?",
+    a: "It has a Lightning connector for iPhone/iPad on one end and a standard USB-A 3.0 connector on the other for any computer or Android device with an adapter.",
   },
   {
-    q: "What do I need to start?",
-    a: "Just a product image. Drop it in, pick the scene or video style you want, and we build the rest around it.",
+    q: "Do I need an app to use it?",
+    a: "You can browse and manage files straight from the Files app, or use the companion app for one-tap photo backup and a quick preview before transfer.",
   },
   {
-    q: "Will the visuals match our brand look?",
-    a: "Yes. We adapt colors, lighting, tone and composition to your existing brand guidelines so everything stays on-brand.",
+    q: "Will it slow down over time as it fills up?",
+    a: "No. Transfer speeds stay consistent thanks to the USB 3.0 connection — moving large video files and full camera rolls stays fast even when the drive is nearly full.",
   },
   {
-    q: "Do I own the assets you generate?",
-    a: "Fully. Every asset we create is royalty-free and yours to use anywhere — in ads, on packs, or across social.",
+    q: "Is my data safe if I lose the drive?",
+    a: "Your files are stored only on the drive itself, so keep it somewhere safe. For extra peace of mind you can run a second backup to your computer or cloud.",
   },
   {
-    q: "How fast do I get results?",
-    a: "Most image packs and video clips are ready in minutes, not days. No shoot, no wait, no reshoots.",
+    q: "How fast are transfers really?",
+    a: "Up to 10x faster than USB 2.0 drives. Large video files and entire camera rolls move in a fraction of the time.",
   },
   {
-    q: "Does this replace my creative team?",
-    a: "No. It handles the heavy lifting — rendering and iteration — so your team can focus on direction and strategy.",
+    q: "Does it work with iPhone cases on?",
+    a: "Yes. The slim Lightning connector is designed to fit most iPhone cases, so you can plug in and back up without removing your case.",
   },
 ];
 

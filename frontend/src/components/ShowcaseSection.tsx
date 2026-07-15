@@ -17,15 +17,15 @@ const VIDEOS = [
 ];
 
 const LEFT_SECTION = {
-  label: "AI Product Shots",
-  heading: ["Your product, new", "scenes on demand."],
-  desc: "Drop a product photo and we build clean packshots and styled lifestyle scenes around it.",
+  label: "Swivel-Proof Metal Build",
+  heading: ["Rotate to protect,", "click to connect."],
+  desc: "360° swivel cap design keeps both connectors safe when not in use — no cap to lose.",
 };
 
 const RIGHT_SECTION = {
-  label: "AI Video Production",
-  heading: ["Campaign-ready", "video in minutes."],
-  desc: "Create on-brand clips for Reels, TikTok and ads without a shoot.",
+  label: "USB 3.0 Speed",
+  heading: ["Transfer files", "up to 10x faster."],
+  desc: "Move large video files and full camera rolls in a fraction of the time of USB 2.0 drives.",
 };
 
 function Eyebrow({ label }: { label: string }) {

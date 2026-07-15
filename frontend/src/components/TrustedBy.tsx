@@ -1,14 +1,11 @@
 "use client";
 
 const CARDS = [
-  "16GB",
-  "32GB",
   "64GB",
   "128GB",
   "256GB",
   "512GB",
   "1TB",
-  "2TB",
 ];
 
 const MARQUEE_SEC = 22;
@@ -23,7 +20,7 @@ export function TrustedBy() {
         {/* ── Left — heading ── */}
         <div className="shrink-0">
           <span className="text-[16px] font-medium text-text transition-colors duration-400">
-            Trusted By
+            Storage Options
           </span>
         </div>
 

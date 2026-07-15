@@ -101,7 +101,7 @@ export function AIFashionShowcase() {
                   letterSpacing: "0.02em",
                 }}
               >
-                AI Fashion Photoshoot
+                Auto Backup for iPhone
               </span>
             </div>
 
@@ -152,7 +152,7 @@ export function AIFashionShowcase() {
                 </svg>
                 <span style={{ fontFamily: "var(--_font-family---font-family)", fontSize: "clamp(9px, 0.6vw, 11px)", fontWeight: 400, color: "white", opacity: 0.4, lineHeight: 1 }}>Dashboard</span>
                 <span style={{ fontSize: "clamp(9px, 0.6vw, 11px)", color: "white", opacity: 0.18, lineHeight: 1 }}>/</span>
-                <span style={{ fontFamily: "var(--_font-family---font-family)", fontSize: "clamp(9px, 0.6vw, 11px)", fontWeight: 500, color: "white", opacity: 0.75, lineHeight: 1 }}>4MLA Project</span>
+                <span style={{ fontFamily: "var(--_font-family---font-family)", fontSize: "clamp(9px, 0.6vw, 11px)", fontWeight: 500, color: "white", opacity: 0.75, lineHeight: 1 }}>                Backup Drive</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <button disabled className="flex items-center gap-1 rounded-md border border-white/[0.06] px-2 py-1 text-white/25" style={{ fontFamily: "var(--_font-family---font-family)", fontSize: "clamp(8px, 0.55vw, 10px)", fontWeight: 500, cursor: "not-allowed" }}>
@@ -236,15 +236,15 @@ export function AIFashionShowcase() {
             <LetterReveal
               as="h3"
               className="text-xl font-bold leading-tight text-text"
-              lines={["Studio-quality,", "without the studio."]}
+              lines={["Back up in seconds,", "no cloud fees."]}
             />
             <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-              Generate photorealistic fashion imagery with AI — no camera, no crew, no studio needed. Just your vision, brought to life.
+              Plug straight into your iPhone&apos;s Lightning port and back up photos &amp; videos in seconds — no cables, no cloud fees, no waiting.
             </p>
             <button className="cta-btn relative mt-5 flex items-center gap-2 overflow-hidden rounded-full bg-[#111] dark:bg-white px-6 py-3 text-sm font-semibold text-white dark:text-[#111]">
               <span className="cta-btn-sweep rounded-full" />
               <span className="cta-btn-label flex items-center gap-2">
-                Try AI Shoot
+                Get Started
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />

@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import img1Src from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
 
 const featuredProduct = {
-  title: "NovaDrive Portable SSD",
-  price: "$129",
-  comparePrice: "$179",
-  discount: "28% OFF",
+  title: "iPhone Flash Drive — Auto Backup",
+  price: "$39",
+  comparePrice: "",
+  discount: "Free Shipping",
   image: img1Src.src,
-  url: "/products/portable-ssd",
+  url: "/shop",
 };
 
 export function StickyProductBar() {

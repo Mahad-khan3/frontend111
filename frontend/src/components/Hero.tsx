@@ -29,7 +29,7 @@ const ORBIT_ITEMS: OrbitItem[] = [
   { src: img3.src, angle: 315, rotate: "rotate-2" },
 ];
 
-const TAGS = ["Photos", "Videos", "Documents", "Contacts"];
+const TAGS = ["Add Photos", "Export All", "256GB", "Lightning", "USB 3.0", "Auto Backup"];
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -59,11 +59,11 @@ export function Hero() {
 <div className="flex flex-col items-center lg:hidden">
   {/* Heading */}
   <div ref={titleRef} className="relative z-10 w-full max-w-[640px] px-5 text-center md:px-9">
-    <h1 className="font-display text-[1rem] leading-[0.95] tracking-tight text-text sm:text-5xl md:text-8xl mt-[60px]">
-      Your Catalog,
-      <br />
-      <span className="text-text-secondary whitespace-nowrap">instantly re-shots</span>
-    </h1>
+      <h1 className="font-display text-[1rem] leading-[0.95] tracking-tight text-text sm:text-5xl md:text-8xl mt-[60px]">
+        Free up space.
+        <br />
+        <span className="text-text-secondary whitespace-nowrap">Backup instantly.</span>
+      </h1>
   </div>
 
   {/* Orbit — mobile/tablet, sab positioning inline CSS se */}
@@ -153,7 +153,7 @@ export function Hero() {
           transition: "transform 0.3s ease",
         }}
       >
-        Explore More
+        Get Started
       </a>
     </div>
   </div>
@@ -238,12 +238,10 @@ export function Hero() {
             style={{ marginTop: "70px" }}
           >
             <h1 className="font-display text-3xl font-small leading-[0.95] tracking-tight text-text sm:text-4xl md:text-5xl">
-              Your Catalog,
+              Free up space.
               <br />
-              <span className="text-text-secondary">instantly re-shots</span>
+              <span className="text-text-secondary">Backup instantly.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-text-secondary">
-            </p>
           </div>
         </div>
       </section>
@@ -254,11 +252,11 @@ export function Hero() {
         style={{ writingMode: "vertical-rl" }}
       >
         <a
-          href="#next"
+          href="/shop"
           className="flex items-center gap-2 rounded-l-2xl bg-[#111] px-3 py-5 text-[11px] font-semibold uppercase tracking-widest text-white shadow-xl transition-all duration-300 hover:bg-[#FF7A1A] hover:shadow-[0_4px_24px_rgba(255,122,26,0.35)]"
           style={{ fontFamily: "var(--_font-family---font-family)" }}
         >
-          Site of the Day
+          Buy Now
         </a>
       </div>
 

@@ -29,40 +29,40 @@ const SECTIONS: SectionData[] = [
     id: "pb",
     label: "PB",
     number: "01",
-    heading: ["Add products", "and brand."],
-    leftLabel: "14+ model presets",
-    rightLabel: "Multiple pose options",
-    subheading: ["Store your products,", "shots and brand look in one place."],
+    heading: ["Plug into", "iPhone."],
+    leftLabel: "Lightning connector",
+    rightLabel: "No app conflicts",
+    subheading: ["Flip out the Lightning side", "and plug directly into your iPhone or iPad."],
     gradient: "linear-gradient(135deg, #609db5, #de8128)",
   },
   {
     id: "go",
     label: "GO",
     number: "02",
-    heading: ["AI generates", "options."],
-    leftLabel: "Concept & scene variations",
-    rightLabel: "Multiple visual directions",
-    subheading: ["Use AI to", "create new concepts, scenes and ideas."],
+    heading: ["Open", "the app."],
+    leftLabel: "Auto-detects drive",
+    rightLabel: "One-tap backup",
+    subheading: ["The companion app finds your drive", "and shows your photos, videos & files instantly."],
     gradient: "linear-gradient(135deg, #555be5, #aa6f7e, #e4752a)",
   },
   {
     id: "cb",
     label: "CB",
     number: "03",
-    heading: ["Choose one", "the best."],
-    leftLabel: "Side-by-side comparison",
-    rightLabel: "Easy selection & review",
-    subheading: ["Pick the versions", "you like from the generations."],
+    heading: ["Choose what", "to back up."],
+    leftLabel: "Select all or specific albums",
+    rightLabel: "Preview before transfer",
+    subheading: ["Pick exactly what you want", "moved to free up phone storage."],
     gradient: "linear-gradient(135deg, #8f6ba8, #6260dc)",
   },
   {
     id: "ax",
     label: "AX",
     number: "04",
-    heading: ["Ready-made", "assets export."],
-    leftLabel: "Optimized for PDP & ads",
-    rightLabel: "One-click export",
-    subheading: ["Export ready-made", "files to your store, ads and social."],
+    heading: ["Flip & connect", "to PC/Mac."],
+    leftLabel: "USB 3.0 on the other end",
+    rightLabel: "Drag-and-drop ready",
+    subheading: ["Rotate the drive around", "and plug the USB-A side into any computer."],
     gradient: "linear-gradient(135deg, #ae201f, #d34726)",
   },
 ];
@@ -146,8 +146,8 @@ function IntroHeader() {
                 margin: 0,
               }}
               lines={[
-                "From idea to assets",
-                { text: "in four steps.", className: "text-black/40 dark:text-white/40" },
+                "From full storage",
+                { text: "to free space in four steps.", className: "text-black/40 dark:text-white/40" },
               ]}
             />
           </div>
@@ -155,7 +155,7 @@ function IntroHeader() {
             className="max-w-xs text-right text-sm leading-relaxed text-black/50 dark:text-white/50 md:text-base"
             style={{ fontFamily: FONT }}
           >
-            Sign up for free and supercharge your creative workflow.
+            Plug in and back up your entire camera roll in minutes.
           </p>
         </div>
       </section>

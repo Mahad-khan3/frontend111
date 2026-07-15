@@ -25,7 +25,30 @@ export function BrandVisuals() {
         </div>
 
         {/* Right column — large headline, top-aligned, ~75% width */}
-        <div className="what-section-right flex flex-1 flex-col justify-start">
+        <div className="what-section-right flex flex-1 flex-col justify-start gap-4">
+          <span
+            style={{
+              fontFamily: "var(--_font-family---font-family)",
+              fontSize: "var(--_fonts---tag)",
+              lineHeight: 1.5,
+              fontWeight: "var(--_font-family---regular)",
+              color: "var(--color-text)",
+            }}
+          >
+            Auto Backup for iPhone
+          </span>
+
+          <div className="flex flex-wrap gap-2">
+            {["Storage/256GB Full", "Add Photos", "Export All"].map((t) => (
+              <span
+                key={t}
+                className="rounded-full border border-black/20 bg-surface px-4 py-2 text-[15px] font-medium text-text"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+
           <LetterReveal
             as="h2"
             className="whitespace-nowrap"
@@ -37,8 +60,19 @@ export function BrandVisuals() {
               letterSpacing: "-0.225rem",
               color: "var(--color-text)",
             }}
-            lines={["On-brand visuals.", "Made by AI."]}
+            lines={["No more", "'storage full.'"]}
           />
+
+          <p
+            className="mt-2 max-w-xl text-lg text-text-secondary"
+            style={{
+              fontFamily: "var(--_font-family---font-family)",
+              fontWeight: 500,
+              lineHeight: 1.6,
+            }}
+          >
+            Plug straight into your iPhone&apos;s Lightning port and back up photos &amp; videos in seconds — no cables, no cloud fees, no waiting.
+          </p>
         </div>
       </div>
     </section>

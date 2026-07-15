@@ -45,7 +45,7 @@ export function CTASection() {
               letterSpacing: "-0.025em",
               marginBottom: "clamp(1rem, 1.5vw, 1.5rem)",
             }}
-            lines={["Studio-quality,", "without the studio."]}
+            lines={["Back up photos.", "Free up space."]}
           />
           <p
             style={{
@@ -57,8 +57,7 @@ export function CTASection() {
               maxWidth: "420px",
             }}
           >
-            Generate photorealistic fashion imagery with AI — no camera, no
-            crew, no studio needed. Just your vision, brought to life.
+            No cables, no cloud fees, no waiting — just plug in and back up.
           </p>
         </div>
 

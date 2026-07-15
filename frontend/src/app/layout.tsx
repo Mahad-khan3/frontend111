@@ -8,8 +8,8 @@ import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
-  title: "NovaDrive | 2-in-1 Cable Flash Drive",
-  description: "Your whole phone, one cable. Lightning & USB-C flash drives with up to 256GB storage.",
+  title: "iPhone Flash Drive | Auto Backup & Free Up Space",
+  description: "Plug into your iPhone's Lightning port and back up photos & videos in seconds. Swivel-proof metal build, USB 3.0 speed, 64GB–1TB.",
 };
 
 const themeInitScript = `
