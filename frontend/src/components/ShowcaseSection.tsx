@@ -2,13 +2,19 @@
 
 import Link from "next/link";
 import { AnimatedHeading } from "./AnimatedHeading";
-import img1 from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
-import img2 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM.jpeg";
-import img3 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (1).jpeg";
-import img4 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (2).jpeg";
-import img5 from "@/images/WhatsApp Image 2026-07-13 at 12.07.31 PM.jpeg";
+import img1 from "@/images/6.jpg";
+import img2 from "@/images/9.jpg";
+import img3 from "@/images/10.jpg";
+import img4 from "@/images/11.jpg";
+import img5 from "@/images/12.jpg";
+import img6 from "@/images/13.jpg";
+import img7 from "@/images/14.jpg";
+import img8 from "@/images/7.jpg";
+import img9 from "@/images/5.jpg";
+import img10 from "@/images/3.jpg";
+import img11 from "@/images/1.jpg";
 
-const IMGS = [img1.src, img2.src, img3.src, img4.src, img5.src];
+const IMGS = [img1.src, img2.src, img3.src, img4.src, img5.src, img6.src, img7.src];
 
 const VIDEOS = [
   "https://cdn.pixabay.com/video/2021/06/11/77316-561991002_large.mp4",
@@ -176,7 +182,7 @@ export function ShowcaseSection() {
           >
             {/* far left — full-height anchor */}
             <img
-              src={IMGS[0]}
+              src={img11.src}
               alt=""
               draggable={false}
               className="h-full w-full object-cover"
@@ -185,7 +191,7 @@ export function ShowcaseSection() {
 
             {/* center top — larger image */}
             <img
-              src={IMGS[2]}
+              src={img6.src}
               alt=""
               draggable={false}
               className="h-full w-full object-cover"
@@ -203,14 +209,14 @@ export function ShowcaseSection() {
               }}
             >
               <img
-                src={IMGS[3]}
+                src={img10.src}
                 alt=""
                 draggable={false}
                 className="h-full w-full object-cover"
                 style={{ flex: 1, borderRadius: "0.75rem" }}
               />
               <img
-                src={IMGS[1]}
+                src={img9.src}
                 alt=""
                 draggable={false}
                 className="h-full w-full object-cover"
@@ -220,7 +226,7 @@ export function ShowcaseSection() {
 
             {/* far right — full-height anchor */}
             <img
-              src={IMGS[4]}
+              src={img8.src}
               alt=""
               draggable={false}
               className="h-full w-full object-cover"

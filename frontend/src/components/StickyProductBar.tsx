@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import img1Src from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
+import img1Src from "@/images/6.jpg";
 
 const featuredProduct = {
   title: "iPhone Flash Drive — Auto Backup",

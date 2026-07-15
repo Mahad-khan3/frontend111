@@ -2,6 +2,10 @@
 
 import { useEffect, useRef, useCallback } from "react";
 import { LetterReveal } from "./LetterReveal";
+import cardImg1 from "@/images/12.jpg";
+import cardImg2 from "@/images/3.jpg";
+import cardImg3 from "@/images/13.jpg";
+import cardImg4 from "@/images/11.jpg";
 
 const FONT = '"SF Pro Display", Arial, sans-serif';
 const HEADING_STYLE: React.CSSProperties = {
@@ -67,6 +71,13 @@ const SECTIONS: SectionData[] = [
   },
 ];
 
+const CARD_IMAGES: Record<string, string> = {
+  pb: cardImg1.src,
+  go: cardImg2.src,
+  cb: cardImg3.src,
+  ax: cardImg4.src,
+};
+
 function DividerWithTicks() {
   return (
     <div className="relative w-full" style={{ height: 1 }}>
@@ -78,7 +89,22 @@ function DividerWithTicks() {
   );
 }
 
-function MockCard({ className = "" }: { className?: string }) {
+function MockCard({ className = "", imageSrc }: { className?: string; imageSrc?: string }) {
+  if (imageSrc) {
+    return (
+      <div
+        className={`overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm ${className}`}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={imageSrc}
+          alt=""
+          draggable={false}
+          className="h-full w-full object-cover"
+        />
+      </div>
+    );
+  }
   return (
     <div
       className={`overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm ${className}`}
@@ -315,7 +341,7 @@ export function ParallaxStackedSections() {
 
                     {/* Preview card */}
                     <div className="mt-auto flex justify-center">
-                      <MockCard className="w-full max-w-sm md:max-h-[55%] md:overflow-hidden" />
+                      <MockCard imageSrc={CARD_IMAGES[data.id]} className="w-full max-w-sm md:max-h-[55%] md:overflow-hidden" />
                     </div>
                   </>
                 ) : (
@@ -360,6 +386,7 @@ export function ParallaxStackedSections() {
                       </div>
                       <div className="relative z-10 flex w-full justify-center">
                         <MockCard
+                          imageSrc={CARD_IMAGES[data.id]}
                           className={`w-full max-w-sm ${
                             isLast ? "" : "md:max-h-[55%] md:overflow-hidden"
                           }`}

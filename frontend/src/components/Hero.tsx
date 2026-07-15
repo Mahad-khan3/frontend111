@@ -2,11 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import img1 from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
-import img2 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM.jpeg";
-import img3 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (1).jpeg";
-import img4 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (2).jpeg";
-import img5 from "@/images/WhatsApp Image 2026-07-13 at 12.07.31 PM.jpeg";
+import img1 from "@/images/4.jpg";
+import img2 from "@/images/13.jpg";
+import img3 from "@/images/8.jpg";
+import img4 from "@/images/9.jpg";
+import img5 from "@/images/2.jpg";
+import img6 from "@/images/6.jpg";
+import img7 from "@/images/7.jpg";
+import img8 from "@/images/12.jpg";
 
 type OrbitItem = {
   src: string;
@@ -24,9 +27,9 @@ const ORBIT_ITEMS: OrbitItem[] = [
   { src: img3.src, angle: 90, rotate: "-rotate-2" },
   { src: img4.src, angle: 135, rotate: "rotate-3" },
   { src: img5.src, angle: 180, rotate: "-rotate-1" },
-  { src: img1.src, angle: 225, rotate: "rotate-1" },
-  { src: img2.src, angle: 270, rotate: "-rotate-3" },
-  { src: img3.src, angle: 315, rotate: "rotate-2" },
+  { src: img6.src, angle: 225, rotate: "rotate-1" },
+  { src: img7.src, angle: 270, rotate: "-rotate-3" },
+  { src: img8.src, angle: 315, rotate: "rotate-2" },
 ];
 
 const TAGS = ["Add Photos", "Export All", "256GB", "Lightning", "USB 3.0", "Auto Backup"];

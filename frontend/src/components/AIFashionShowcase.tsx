@@ -1,12 +1,17 @@
 "use client";
 import { LetterReveal } from "./LetterReveal";
-import img1 from "@/images/WhatsApp Image 2026-07-13 at 12.07.29 PM.jpeg";
-import img2 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM.jpeg";
-import img3 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (1).jpeg";
-import img4 from "@/images/WhatsApp Image 2026-07-13 at 12.07.30 PM (2).jpeg";
-import img5 from "@/images/WhatsApp Image 2026-07-13 at 12.07.31 PM.jpeg";
+import img1 from "@/images/2.jpg";
+import img2 from "@/images/1.jpg";
+import img3 from "@/images/2.jpg";
+import img4 from "@/images/3.jpg";
+import img5 from "@/images/4.jpg";
+import img6 from "@/images/5.jpg";
+import img7 from "@/images/7.jpg";
+import img8 from "@/images/8.jpg";
+import img9 from "@/images/15.jpg";
+import img10 from "@/images/16.jpg";
 
-const IMGS = [img1.src, img2.src, img3.src, img4.src, img5.src];
+const IMGS = [img2.src, img3.src, img4.src, img5.src, img6.src, img7.src, img8.src, img9.src, img10.src];
 
 const ROW1 = [
   { src: IMGS[0], alt: "Portrait 1" },
@@ -16,10 +21,10 @@ const ROW1 = [
   { src: IMGS[4], alt: "Portrait 5" },
 ];
 const ROW2 = [
-  { src: IMGS[0], alt: "Portrait 6" },
-  { src: IMGS[1], alt: "Portrait 7" },
-  { src: IMGS[2], alt: "Portrait 8" },
-  { src: IMGS[3], alt: "Portrait 9" },
+  { src: IMGS[5], alt: "Portrait 6" },
+  { src: IMGS[6], alt: "Portrait 7" },
+  { src: IMGS[7], alt: "Portrait 8" },
+  { src: IMGS[8], alt: "Portrait 9" },
 ];
 
 const MOBILE_ROW1 = [
@@ -30,7 +35,7 @@ const MOBILE_ROW1 = [
 const MOBILE_ROW2 = [
   { src: IMGS[3], alt: "Portrait 4" },
   { src: IMGS[4], alt: "Portrait 5" },
-  { src: IMGS[0], alt: "Portrait 6" },
+  { src: IMGS[5], alt: "Portrait 6" },
 ];
 
 const DL_ICON = (
