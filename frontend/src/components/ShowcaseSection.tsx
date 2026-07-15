@@ -211,10 +211,10 @@ export function ShowcaseSection() {
             {/* center bottom — two smaller images side by side */}
             <div
               style={{
-                gridColumn: 2,
-                gridRow: 2,
+                gridArea: "2 / 2",
                 display: "flex",
                 gap: "clamp(0.3rem, 0.6vw, 0.6rem)",
+                margin: "0px 0px 20px 0px",
                 minHeight: 0,
               }}
             >
