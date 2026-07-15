@@ -22,6 +22,16 @@ const VIDEOS = [
   "https://cdn.pixabay.com/video/2022/11/28/140828-776043783_large.mp4",
 ];
 
+const LEFT_GRID_CONFIG = {
+  columns: "0.6fr 0.65fr 0.6fr",
+  rows: "0.5fr 0.5fr",
+  leftImg:  { aspectRatio: "1/1", borderRadius: "0 0.75rem 0.75rem 0" },
+  centerTop: { borderRadius: "0.75rem", height: "130px", margin: "50px 0px 0px 0px" },
+  centerBottomLeft:  { borderRadius: "0.75rem" },
+  centerBottomRight: { borderRadius: "0.75rem" },
+  rightImg: { aspectRatio: "1/1", borderRadius: "0.75rem 0 0 0.75rem" },
+};
+
 const LEFT_SECTION = {
   label: "Swivel-Proof Metal Build",
   heading: ["Rotate to protect,", "click to connect."],
@@ -173,8 +183,8 @@ export function ShowcaseSection() {
               flex: "1 1 auto",
               minHeight: 0,
               display: "grid",
-              gridTemplateColumns: "1fr 1.25fr 1fr",
-              gridTemplateRows: "1fr 1fr",
+              gridTemplateColumns: LEFT_GRID_CONFIG.columns,
+              gridTemplateRows: LEFT_GRID_CONFIG.rows,
               gap: "clamp(0.3rem, 0.6vw, 0.6rem)",
               padding: "clamp(0.7rem, 1.4vw, 1.4rem) 0",
               paddingBottom: "clamp(0.4rem, 0.8vw, 0.8rem)",
@@ -182,20 +192,20 @@ export function ShowcaseSection() {
           >
             {/* far left — full-height anchor */}
             <img
-              src={img11.src}
+              src={img3.src}
               alt=""
               draggable={false}
               className="h-full w-full object-cover"
-              style={{ gridColumn: 1, gridRow: "1 / 3", borderRadius: "0 0.75rem 0.75rem 0" }}
+              style={{ gridColumn: 1, gridRow: "1 / 3", borderRadius: LEFT_GRID_CONFIG.leftImg.borderRadius, aspectRatio: LEFT_GRID_CONFIG.leftImg.aspectRatio }}
             />
 
             {/* center top — larger image */}
             <img
-              src={img6.src}
+              src={img4.src}
               alt=""
               draggable={false}
-              className="h-full w-full object-cover"
-              style={{ gridColumn: 2, gridRow: 1, borderRadius: "0.75rem" }}
+              className="center-top-img h-full w-full object-cover"
+              style={{ gridColumn: 2, gridRow: 1, borderRadius: LEFT_GRID_CONFIG.centerTop.borderRadius }}
             />
 
             {/* center bottom — two smaller images side by side */}
@@ -209,28 +219,28 @@ export function ShowcaseSection() {
               }}
             >
               <img
-                src={img10.src}
+                src={img5.src}
                 alt=""
                 draggable={false}
                 className="h-full w-full object-cover"
-                style={{ flex: 1, borderRadius: "0.75rem" }}
+                style={{ flex: 1, borderRadius: LEFT_GRID_CONFIG.centerBottomLeft.borderRadius }}
               />
               <img
-                src={img9.src}
+                src={img6.src}
                 alt=""
                 draggable={false}
                 className="h-full w-full object-cover"
-                style={{ flex: 1, borderRadius: "0.75rem" }}
+                style={{ flex: 1, borderRadius: LEFT_GRID_CONFIG.centerBottomRight.borderRadius }}
               />
             </div>
 
             {/* far right — full-height anchor */}
             <img
-              src={img8.src}
+              src={img7.src}
               alt=""
               draggable={false}
               className="h-full w-full object-cover"
-              style={{ gridColumn: 3, gridRow: "1 / 3", borderRadius: "0.75rem 0 0 0.75rem" }}
+              style={{ gridColumn: 3, gridRow: "1 / 3", borderRadius: LEFT_GRID_CONFIG.rightImg.borderRadius, aspectRatio: LEFT_GRID_CONFIG.rightImg.aspectRatio }}
             />
           </div>
 
@@ -343,6 +353,18 @@ export function ShowcaseSection() {
           0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
           30% { transform: translateY(-5px); opacity: 1; }
         }
+        .center-top-img {
+          grid-area: 1 / 2;
+          border-radius: 0.75rem;
+          height: ${LEFT_GRID_CONFIG.centerTop.height} !important;
+          margin: ${LEFT_GRID_CONFIG.centerTop.margin} !important;
+        }
+        @media (max-width: 768px) {
+          .center-top-img {
+            height: ${LEFT_GRID_CONFIG.centerTop.height} !important;
+            margin: ${LEFT_GRID_CONFIG.centerTop.margin} !important;
+          }
+        }   
       `}</style>
     </section>
   );
