@@ -1,15 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useUserName } from "@/context/UserNameContext";
 
 export function NamePopup() {
   const { hasSetName, setUserName } = useUserName();
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [name, setName] = useState("");
+  const [mounted, setMounted] = useState(false);
 
-  if (!show || hasSetName) return null;
+  useEffect(() => {
+    setMounted(true);
+    if (!hasSetName) setShow(true);
+  }, [hasSetName]);
+
+  if (!mounted || !show || hasSetName) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
