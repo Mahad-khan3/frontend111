@@ -12,6 +12,7 @@ import { TrustedBy } from "@/components/TrustedBy";
 import { ParallaxStackedSections } from "@/components/ParallaxStackedSections";
 import { FAQSection } from "@/components/FAQSection";
 import { StickyProductBar } from "@/components/StickyProductBar";
+import { NamePopup } from "@/components/NamePopup";
 
 export default function Home() {
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function Home() {
 
   return (
     <>
+      <NamePopup />
       <StickyProductBar />
       <Hero />
       <BrandVisuals />

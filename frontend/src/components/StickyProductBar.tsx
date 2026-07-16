@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useUserName } from "@/context/UserNameContext";
 import img1Src from "@/images/6.jpg";
 
 const featuredProduct = {
@@ -16,6 +17,7 @@ const featuredProduct = {
 export function StickyProductBar() {
   const [visible, setVisible] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const { userName } = useUserName();
 
   useEffect(() => {
     const hero = document.getElementById("hero");
@@ -71,7 +73,7 @@ export function StickyProductBar() {
               />
               <div className="flex flex-col gap-0.5">
                 <span className="text-xs font-medium text-[#111] md:text-sm">
-                  {featuredProduct.title}
+                  {userName}, {featuredProduct.title}
                 </span>
                 <div className="flex items-center gap-2">
                   {featuredProduct.comparePrice && (

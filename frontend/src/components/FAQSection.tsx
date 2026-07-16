@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LetterReveal } from "./LetterReveal";
+import { useUserName } from "@/context/UserNameContext";
 
 const faqs = [
   {
@@ -32,6 +33,7 @@ const faqs = [
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { userName } = useUserName();
 
   return (
     <section style={{ backgroundColor: "var(--color-bg)", transition: "background-color 0.4s ease" }}>
@@ -88,7 +90,7 @@ export function FAQSection() {
               letterSpacing: "-0.02em",
               transition: "color 0.4s ease",
             }}
-            lines={["Not AI-gen answers.", "Real ones here."]}
+            lines={[`${userName}, not AI-gen answers.`, "Real ones here."]}
           />
 
           <div className="faq-list">

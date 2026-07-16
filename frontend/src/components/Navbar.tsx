@@ -6,11 +6,13 @@ import { Logo } from "./Logo";
 import { ScrollProgress } from "./ScrollProgress";
 import { FullscreenMenu } from "./FullscreenMenu";
 import { useTheme } from "@/context/ThemeContext";
+import { useUserName } from "@/context/UserNameContext";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { userName } = useUserName();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -113,6 +115,9 @@ export function Navbar() {
                 <path d="M4 20c0-4 3.6-6 8-6s8 2 8 6" />
               </svg>
             </Link>
+            <span className="text-xs font-medium text-text hidden xl:inline" style={{ fontFamily: "var(--_font-family---font-family)" }}>
+              Hey, {userName}
+            </span>
             <Link
               href="/shop"
               className="group relative overflow-hidden rounded-full bg-black px-4 md:px-5 py-2.5 text-xs md:text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_24px_-6px_var(--color-accent)]"

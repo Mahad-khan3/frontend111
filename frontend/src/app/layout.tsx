@@ -6,6 +6,7 @@ import { CartDrawer } from "@/components/CartDrawer";
 import { Preloader } from "@/components/Preloader";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { UserNameProvider } from "@/context/UserNameContext";
 
 export const metadata: Metadata = {
   title: "iPhone Flash Drive | Auto Backup & Free Up Space",
@@ -31,11 +32,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Preloader>
           <ThemeProvider>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-            <CartDrawer />
-            <Toaster position="bottom-right" toastOptions={{ style: { background: "#FFFFFF", color: "#111111", border: "1px solid #E5E7EB" } }} />
+            <UserNameProvider>
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+              <CartDrawer />
+              <Toaster position="bottom-right" toastOptions={{ style: { background: "#FFFFFF", color: "#111111", border: "1px solid #E5E7EB" } }} />
+            </UserNameProvider>
           </ThemeProvider>
         </Preloader>
       </body>

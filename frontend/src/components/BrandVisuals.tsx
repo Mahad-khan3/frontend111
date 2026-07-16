@@ -1,8 +1,10 @@
 "use client";
 
 import { LetterReveal } from "./LetterReveal";
+import { useUserName } from "@/context/UserNameContext";
 
 export function BrandVisuals() {
+  const { userName } = useUserName();
   return (
     <section className="w-full bg-surface transition-colors duration-400 dark:bg-black">
       <div
@@ -60,7 +62,7 @@ export function BrandVisuals() {
               letterSpacing: "-0.225rem",
               color: "var(--color-text)",
             }}
-            lines={["No more", "'storage full.'"]}
+            lines={[`${userName}, no more`, "'storage full.'"]}
           />
 
           <p
@@ -71,7 +73,7 @@ export function BrandVisuals() {
               lineHeight: 1.6,
             }}
           >
-            Plug straight into your iPhone&apos;s Lightning port and back up photos &amp; videos in seconds — no cables, no cloud fees, no waiting.
+            {userName}, plug straight into your iPhone&apos;s Lightning port and back up photos &amp; videos in seconds — no cables, no cloud fees, no waiting.
           </p>
         </div>
       </div>

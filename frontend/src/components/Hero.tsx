@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { useUserName } from "@/context/UserNameContext";
 import img1 from "@/images/4.jpg";
 import img2 from "@/images/13.jpg";
 import img3 from "@/images/8.jpg";
@@ -38,6 +39,7 @@ export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
+  const { userName } = useUserName();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -62,6 +64,9 @@ export function Hero() {
 <div className="flex flex-col items-center lg:hidden">
   {/* Heading */}
   <div ref={titleRef} className="relative z-10 w-full max-w-[640px] px-5 text-center md:px-9">
+      <span className="text-text-secondary text-[11px] font-semibold uppercase tracking-[0.2em] mb-3 block" style={{ fontFamily: "var(--_font-family---font-family)" }}>
+        Welcome, {userName}
+      </span>
       <h1 className="font-display text-[1rem] leading-[0.95] tracking-tight text-text sm:text-5xl md:text-8xl mt-[60px]">
         Free up space.
         <br />
@@ -240,6 +245,9 @@ export function Hero() {
             className="relative z-10 w-full max-w-[640px] px-4 xl:px-8 text-left"
             style={{ marginTop: "70px" }}
           >
+            <span className="text-text-secondary text-[11px] font-semibold uppercase tracking-[0.2em] mb-3 block" style={{ fontFamily: "var(--_font-family---font-family)" }}>
+              Welcome, {userName}
+            </span>
             <h1 className="font-display text-3xl font-small leading-[0.95] tracking-tight text-text sm:text-4xl md:text-5xl">
               Free up space.
               <br />

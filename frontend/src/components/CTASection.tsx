@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { LetterReveal } from "./LetterReveal";
+import { useUserName } from "@/context/UserNameContext";
 
 const GRID_ICON = (
   <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
@@ -18,6 +19,7 @@ const GRID_ICON = (
 );
 
 export function CTASection() {
+  const { userName } = useUserName();
   return (
     <section
       className="w-full hidden md:block bg-surface transition-colors duration-400 dark:bg-black"
@@ -45,7 +47,7 @@ export function CTASection() {
               letterSpacing: "-0.025em",
               marginBottom: "clamp(1rem, 1.5vw, 1.5rem)",
             }}
-            lines={["Back up photos.", "Free up space."]}
+            lines={[`${userName}, back up photos.`, "Free up space."]}
           />
           <p
             style={{
@@ -57,7 +59,7 @@ export function CTASection() {
               maxWidth: "420px",
             }}
           >
-            No cables, no cloud fees, no waiting — just plug in and back up.
+            {userName}, no cables, no cloud fees, no waiting — just plug in and back up.
           </p>
         </div>
 
