@@ -9,6 +9,7 @@ import { CTASection } from "@/components/CTASection";
 import { ShowcaseSection } from "@/components/ShowcaseSection";
 import { HowItWorks } from "@/components/HowItWorks";
 import { TrustedBy } from "@/components/TrustedBy";
+import { NovaDriveBanner } from "@/components/NovaDriveBanner";
 import { ParallaxStackedSections } from "@/components/ParallaxStackedSections";
 import { FAQSection } from "@/components/FAQSection";
 import { StickyProductBar } from "@/components/StickyProductBar";
@@ -37,6 +38,7 @@ export default function Home() {
       <ShowcaseSection />
       <HowItWorks />
       <TrustedBy />
+      <NovaDriveBanner />
       <ParallaxStackedSections />
       <FAQSection />
     </>
